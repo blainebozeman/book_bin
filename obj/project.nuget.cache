@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "6d5nhpcqklxGouBNxjrMoB5l63gfiaCfe8C78SC/2UrGSn6RXsrj6fWTwJaARNc4QrVnGe6FDgWMGcN+bbsLRg==",
+  "success": true,
+  "projectFilePath": "/Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/book_bin.csproj",
+  "expectedPackageFiles": [
+    "/Users/blainebozeman/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/blainebozeman/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/blainebozeman/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/blainebozeman/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/blainebozeman/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/blainebozeman/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
