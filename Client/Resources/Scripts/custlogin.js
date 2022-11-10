@@ -34,7 +34,7 @@ function createForm()
         {
             username : event.target.elements.username.value,
             rating : event.target.elements.password.value,
-            userType : "employee"
+            userType : "customer"
         }
 
         try
