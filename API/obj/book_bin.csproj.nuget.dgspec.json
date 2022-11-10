@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {}
+    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {
+    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
+        "projectUniqueName": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
         "projectName": "book_bin",
-        "projectPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
-        "packagesPath": "C:\\Users\\krysi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\obj\\",
+        "projectPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
+        "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\krysi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,8 +53,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
