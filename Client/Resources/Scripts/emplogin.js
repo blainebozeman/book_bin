@@ -1,4 +1,5 @@
 let addForm = document.getElementById("login")
+let error = document.getElementById("error")
 
 function handleOnLoad()
 {
@@ -42,8 +43,7 @@ function createForm()
         }
         catch
         {
-            document.createTextNode("Please enter a valid usernamae and password")
-
+            error.appendChild(document.createTextNode("Please enter a valid username and password"))
         }
     
     })
