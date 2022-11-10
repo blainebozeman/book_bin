@@ -1,4 +1,3 @@
-using api.models;
 using MySql.Data.MySqlClient;
 using API.Models;
 namespace API.DataAccess
