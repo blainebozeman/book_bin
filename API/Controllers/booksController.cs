@@ -20,7 +20,7 @@ namespace book_bin.Controllers
 
         // GET: api/books/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public string Get(Guid BookID)
         {
             return "value";
         }
@@ -33,13 +33,13 @@ namespace book_bin.Controllers
 
         // PUT: api/books/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(Guid BookID, [FromBody] string value)
         {
         }
 
         // DELETE: api/books/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid BookID)
         {
         }
     }
