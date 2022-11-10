@@ -43,7 +43,7 @@ function createForm()
         }
         catch
         {
-            error.appendChild(document.createTextNode("Please enter a valid usernamae and password"))
+            error.appendChild(document.createTextNode("Please enter a valid username and password"))
         }
     
     })
