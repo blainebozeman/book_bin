@@ -1,5 +1,6 @@
 let addForm = document.getElementById("login")
 let error = document.getElementById("error")
+// const categoryurl = "https://localhost:7189/api/employee"
 
 function handleOnLoad()
 {
@@ -30,23 +31,41 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
+        let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
             username : event.target.elements.username.value,
             rating : event.target.elements.password.value,
             userType : "employee"
         }
-
         try
         {
             GetUser(user)
         }
         catch
         {
-            error.appendChild(document.createTextNode("Please enter a valid username and password"))
+            error.innerHTML = '';
+            error.appendChild(errormessage);
         }
-    
     })
-
     addForm.appendChild(form);
+}
+
+function GetUser(user)
+{
+    fetch(categoryurl).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        console.log(json);
+    });
+
+    // fetch(categoryurl, {method: 'GET', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    // body : JSON.stringify(user)
+    // }).then(function(response){
+    //     console.log(response);
+    //     return response.json();
+    // }).then(function(json){
+    //     console.log(json);
+    // });
 }

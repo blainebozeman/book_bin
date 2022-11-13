@@ -32,6 +32,7 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
+        let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
             username : event.target.elements.username.value,
@@ -45,14 +46,9 @@ function createForm()
         }
         catch
         {
-         HEAD
-            document.createTextNode("Please enter a valid usernamae and password")
-
-
-            error.appendChild(document.createTextNode("Please enter a valid username and password"))
-
-        }
-    
+            error.innerHTML = '';
+            error.appendChild(errormessage);
+        } 
     })
 
     addForm.appendChild(form);
