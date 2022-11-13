@@ -17,6 +17,7 @@ namespace book_bin.Controllers
         [HttpGet]
         public List<Employees> Get(Employees search)
         {
+            System.Console.WriteLine("HERE");
             EmployeeData dataAccess = new EmployeeData();
             return dataAccess.GetSelect(search);
         }
@@ -25,6 +26,7 @@ namespace book_bin.Controllers
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
+            System.Console.WriteLine("here");
             return "value";
         }
 

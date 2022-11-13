@@ -43,6 +43,7 @@ namespace API.DataAccess
             //Is it open?
             try
             {
+                System.Console.WriteLine("made it here");
                 con.Open();
             }
             catch (System.Exception)
