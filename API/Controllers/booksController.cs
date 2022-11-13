@@ -13,20 +13,20 @@ namespace book_bin.Controllers
     {
         // GET: api/books
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> Getxx()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/books/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "Getx")]
         public string Get(Guid BookID)
         {
             return "value";
         }
 
         // POST: api/books
-        [HttpPost]
+        [HttpPost("upload", Name = "uploadx")]
         public void Post([FromBody] string value)
         {
         }

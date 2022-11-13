@@ -15,10 +15,10 @@ namespace book_bin.Controllers
     {
         // GET: api/Employee
         [HttpGet]
-        public List<Employees> Get()
+        public List<Employees> Get(Employees search)
         {
             EmployeeData dataAccess = new EmployeeData();
-            return dataAccess.GetAll();
+            return dataAccess.GetSelect(search);
         }
 
         // GET: api/Employee/5
@@ -28,7 +28,7 @@ namespace book_bin.Controllers
             return "value";
         }
 
-        // POST: api/Employee
+        //POST: api/Employee
         [HttpPost]
         public void Post([FromBody] string value)
         {

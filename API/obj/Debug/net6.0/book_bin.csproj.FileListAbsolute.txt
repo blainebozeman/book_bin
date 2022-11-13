@@ -480,3 +480,10 @@ C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\obj\Debug\net6.0\refi
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\obj\Debug\net6.0\book_bin.pdb
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\obj\Debug\net6.0\book_bin.genruntimeconfig.cache
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\obj\Debug\net6.0\ref\book_bin.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\BouncyCastle.Crypto.dll
