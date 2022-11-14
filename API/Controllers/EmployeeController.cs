@@ -15,11 +15,11 @@ namespace book_bin.Controllers
     {
         // GET: api/Employee
         [HttpGet]
-        public List<Employees> Get(Employees search)
+        public List<Employees> Get()
         {
             System.Console.WriteLine("HERE");
             EmployeeData dataAccess = new EmployeeData();
-            return dataAccess.GetSelect(search);
+            return dataAccess.GetAll();
         }
 
         // GET: api/Employee/5

@@ -1,5 +1,4 @@
 using MySql.Data.MySqlClient;
-using API;
 using API.Models;
 namespace API.DataAccess
 {
