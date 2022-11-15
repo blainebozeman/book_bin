@@ -1,3 +1,4 @@
+using System;
 namespace API.Models
 {
     public class Books
@@ -7,6 +8,10 @@ namespace API.Models
         public string Author{get;set;}
         public string ISBN{get;set;}
         public string Condition {get; set;}
+
+        public bool Deleted {get; set;}
+
+        public DateTime DateAdded {get; set;}
 
         public override string ToString()
         {

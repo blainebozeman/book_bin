@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {}
+    "/Users/blainebozeman/Documents/Source/Repos/fall2022/GROUP PROJECT/book_bin/API/book_bin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {
+    "/Users/blainebozeman/Documents/Source/Repos/fall2022/GROUP PROJECT/book_bin/API/book_bin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
+        "projectUniqueName": "/Users/blainebozeman/Documents/Source/Repos/fall2022/GROUP PROJECT/book_bin/API/book_bin.csproj",
         "projectName": "book_bin",
-        "projectPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
-        "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\obj\\",
+        "projectPath": "/Users/blainebozeman/Documents/Source/Repos/fall2022/GROUP PROJECT/book_bin/API/book_bin.csproj",
+        "packagesPath": "/Users/blainebozeman/.nuget/packages/",
+        "outputPath": "/Users/blainebozeman/Documents/Source/Repos/fall2022/GROUP PROJECT/book_bin/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/blainebozeman/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
