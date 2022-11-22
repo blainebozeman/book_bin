@@ -34,38 +34,19 @@ function createForm()
         let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
-            username : event.target.elements.username.value,
-            rating : event.target.elements.password.value,
-            userType : "employee"
+            EmpUserName : event.target.elements.username.value,
+            EmpPassword : event.target.elements.password.value,
         }
-        try
-        {
-            GetUser(user)
-        }
-        catch
-        {
-            error.innerHTML = '';
-            error.appendChild(errormessage);
-        }
+        GetUser(user);
     })
     addForm.appendChild(form);
 }
 
 function GetUser(user)
 {
-    fetch(categoryurl).then(function(response){
-        console.log(response);
-        return response.json();
-    }).then(function(json){
-        console.log(json);
-    });
-
-    // fetch(categoryurl, {method: 'GET', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
-    // body : JSON.stringify(user)
-    // }).then(function(response){
-    //     console.log(response);
-    //     return response.json();
-    // }).then(function(json){
-    //     console.log(json);
-    // });
+    fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    body : JSON.stringify(user)
+    }).then((response) => {     
+    console.log(response);
+    })
 }

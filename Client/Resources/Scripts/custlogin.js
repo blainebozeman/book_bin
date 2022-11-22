@@ -1,5 +1,5 @@
 let addForm = document.getElementById("login")
-
+const categoryurl = "https://localhost:5001/api/customers"
 let error = document.getElementById("error")
 
 
@@ -35,21 +35,27 @@ function createForm()
         let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
-            username : event.target.elements.username.value,
-            rating : event.target.elements.password.value,
-            userType : "customer"
+            CustUserName : event.target.elements.username.value,
+            CustPassword : event.target.elements.password.value,
         }
-
-        try
-        {
-            GetUser(user)
-        }
-        catch
-        {
-            error.innerHTML = '';
-            error.appendChild(errormessage);
-        } 
+        // try
+        // {
+            PostCustomer(user)
+        // }
+        // catch
+        // {
+        //     error.innerHTML = '';
+        //     error.appendChild(errormessage);
+        // } 
     })
 
     addForm.appendChild(form);
+}
+function PostCustomer(user)
+{ console.log(user)
+    fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    body : JSON.stringify(user)
+    }).then((response) => {
+        console.log(response);
+    })
 }
