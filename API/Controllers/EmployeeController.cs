@@ -18,11 +18,11 @@ namespace book_bin.Controllers
         // GET: api/Employee
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public List<Employees> Get(Employees employee)
+        public List<Employees> Get()
         {
             System.Console.WriteLine("HERE");
             EmployeeData dataAccess = new EmployeeData();
-            return dataAccess.GetSelect(employee);
+            return dataAccess.GetAll();
         }
 
         // GET: api/Employee/5
@@ -35,10 +35,13 @@ namespace book_bin.Controllers
         }
 
         //POST: api/Employee
-        [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public /*List<Employees>*/ void Post([FromBody] Employees user)
         {
+            System.Console.WriteLine("HERE IN POST");
+            EmployeeData dataAccess = new EmployeeData();
+            dataAccess.GetSelect(user);
+            //return dataAccess.GetSelect(user); 
         }
 
         // PUT: api/Employee/5

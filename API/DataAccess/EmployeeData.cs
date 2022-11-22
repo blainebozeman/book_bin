@@ -26,15 +26,15 @@ namespace API.DataAccess
 
             while (rdr.Read())
             {
-                Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1)+ " " + rdr.GetBoolean(4));
                 Employees newEmployees = new Employees() { EmpUserName = rdr.GetString(0), EmpPassword = rdr.GetString(1), Emp_ID = rdr.GetInt32(2), Admin = rdr.GetBoolean(3), FName = rdr.GetString(4), LName = rdr.GetString(5)};
                 employees.Add(newEmployees);
             }
             con.Close();
             return employees;
         } 
-        public List<Employees> GetSelect(Employees search)
+        public List<Employees> GetSelect(Employees user)
         {
+            System.Console.WriteLine(user);
             List<Employees> employees = new List<Employees>();
             ConnectionString connectionString = new ConnectionString();
             string cs = connectionString.cs;
@@ -50,7 +50,7 @@ namespace API.DataAccess
                 System.Console.WriteLine("It's open");
             }
 
-            string stm = $"SELECT * from drivers WHERE EmpUserName LIKE '{search.EmpUserName} and EmpPassword LIKE '{search.EmpPassword}';";
+            string stm = $"SELECT * from drivers WHERE EmpUserName LIKE '{user.EmpUserName} and EmpPassword LIKE '{user.EmpPassword}';";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
