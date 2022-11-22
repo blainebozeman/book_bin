@@ -17,7 +17,7 @@ namespace API.DataAccess
             }
             catch (System.Exception)
             {
-                System.Console.WriteLine("It's open");
+                System.Console.WriteLine("It's not open");
             }
 
             string stm = "SELECT * from employees order by Emp_id";

@@ -1,6 +1,6 @@
 let addForm = document.getElementById("login")
 let error = document.getElementById("error")
-// const categoryurl = "https://localhost:7189/api/employee"
+const categoryurl = "https://localhost:5001/api/employee"
 
 function handleOnLoad()
 {
