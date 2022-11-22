@@ -18,11 +18,11 @@ namespace book_bin.Controllers
         // GET: api/Employee
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public List<Employees> Get()
+        public List<Employees> Get(Employees employee)
         {
             System.Console.WriteLine("HERE");
             EmployeeData dataAccess = new EmployeeData();
-            return dataAccess.GetAll();
+            return dataAccess.GetSelect(employee);
         }
 
         // GET: api/Employee/5

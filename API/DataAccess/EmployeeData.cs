@@ -28,7 +28,7 @@ namespace API.DataAccess
             {
                 Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1)+ " " + rdr.GetBoolean(4));
                 Employees newEmployees = new Employees() { EmpUserName = rdr.GetString(0), EmpPassword = rdr.GetString(1), Emp_ID = rdr.GetInt32(2), Admin = rdr.GetBoolean(3), FName = rdr.GetString(4), LName = rdr.GetString(5)};
-                    employees.Add(newEmployees);
+                employees.Add(newEmployees);
             }
             con.Close();
             return employees;
@@ -56,7 +56,6 @@ namespace API.DataAccess
 
             while (rdr.Read())
             {
-                Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1)+ " " + rdr.GetBoolean(4));
                 Employees newEmployees = new Employees() { EmpUserName = rdr.GetString(0), EmpPassword = rdr.GetString(1), Emp_ID = rdr.GetInt32(2), Admin = rdr.GetBoolean(3), FName = rdr.GetString(4), LName = rdr.GetString(5)};
                     employees.Add(newEmployees);
             }
