@@ -3,7 +3,7 @@ namespace API.Models
 {
     public class Books
     {
-        public Guid BookID{get;set;}
+        public int BookID{get;set;}
         public string Title{get;set;}
         public string Author{get;set;}
         public string ISBN{get;set;}
