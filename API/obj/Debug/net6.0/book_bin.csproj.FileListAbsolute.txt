@@ -487,3 +487,10 @@ C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\K4os
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\MySql.Data.dll
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\ZstdNet.dll
 C:\Users\maxim\OneDrive\Desktop\Source\Repose\book_bin\api\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\krysi\source\repos\book_bin\api\bin\Debug\net6.0\BouncyCastle.Crypto.dll

@@ -15,6 +15,7 @@ namespace book_bin.Controllers
         [HttpGet]
         public IEnumerable<string> Getxx()
         {
+            
             return new string[] { "value1", "value2" };
         }
 
