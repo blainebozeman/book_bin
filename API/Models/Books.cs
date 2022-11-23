@@ -7,7 +7,7 @@ namespace API.Models
         public string Title{get;set;}
         public string Author{get;set;}
         public string ISBN{get;set;}
-        public string Condition {get; set;}
+        public int Condition {get; set;}
 
         public bool Deleted {get; set;}
 
