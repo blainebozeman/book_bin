@@ -27,21 +27,20 @@ namespace book_bin.Controllers
 
         // GET: api/Employee/5
         [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{username}", Name = "GetUserName")]
+        public string Get(int userName)
         {
-            System.Console.WriteLine("here");
+            System.Console.WriteLine("here"+userName);
             return "value";
         }
 
         //POST: api/Employee
         [HttpPost]
-        public /*List<Employees>*/ void Post([FromBody] Employees user)
+        public List<Employees> Post([FromBody] Employees user)
         {
             System.Console.WriteLine("HERE IN POST");
             EmployeeData dataAccess = new EmployeeData();
-            dataAccess.GetSelect(user);
-            //return dataAccess.GetSelect(user); 
+            return dataAccess.GetSelect(user); 
         }
 
         // PUT: api/Employee/5

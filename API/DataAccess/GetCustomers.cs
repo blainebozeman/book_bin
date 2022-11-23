@@ -22,7 +22,7 @@ namespace API.DataAccess
                 System.Console.WriteLine("It's open");
             }
 
-            string stm = $"SELECT * from drivers WHERE CustUserName LIKE '{user.CustUserName} and CustPassword LIKE '{user.CustPassword}';";
+            string stm = $"SELECT * from drivers WHERE CustUserName LIKE '{user.CustUserName}' and CustPassword LIKE '{user.CustPassword}';";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
 

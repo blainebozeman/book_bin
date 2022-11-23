@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using API.Models;
+using API.DataAccess;
 namespace book_bin.Controllers
 {
     [Route("api/[controller]")]
@@ -27,8 +28,11 @@ namespace book_bin.Controllers
 
         // POST: api/customers
         [HttpPost]
-        public void Post([FromBody] string value)
+        public List<Customer> Post([FromBody] Customer user)
         {
+            System.Console.WriteLine("HERE IN POST");
+            GetCustomers dataAccess = new GetCustomers();
+            return dataAccess.GetSelect(user); 
         }
 
         // PUT: api/customers/5
