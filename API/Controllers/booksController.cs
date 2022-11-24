@@ -13,15 +13,17 @@ namespace book_bin.Controllers
     {
         // GET: api/books
         [HttpGet]
-        public IEnumerable<string> Getxx()
+        public List<Books> Get()
         {
-            
-            return new string[] { "value1", "value2" };
+            System.Console.WriteLine("HERE");
+            BookData dataAccess = new BookData();
+            return dataAccess.GetAll();
         }
+
 
         // GET: api/books/5
         [HttpGet("{id}", Name = "Getx")]
-        public string Get(Guid BookID)
+        public string Get(int BookID)
         {
             return "value";
         }
@@ -34,13 +36,13 @@ namespace book_bin.Controllers
 
         // PUT: api/books/5
         [HttpPut("{id}")]
-        public void Put(Guid BookID, [FromBody] string value)
+        public void Put(int BookID, [FromBody] string value)
         {
         }
 
         // DELETE: api/books/5
         [HttpDelete("{id}")]
-        public void Delete(Guid BookID)
+        public void Delete(int BookID)
         {
         }
     }

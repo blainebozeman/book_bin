@@ -50,7 +50,7 @@ namespace API.DataAccess
                 System.Console.WriteLine("It's open");
             }
 
-            string stm = $"SELECT * from drivers WHERE EmpUserName LIKE '{user.EmpUserName} and EmpPassword LIKE '{user.EmpPassword}';";
+            string stm = $"SELECT * from employees WHERE EmpUserName LIKE '{user.EmpUserName}' and EmpPassword LIKE '{user.EmpPassword}';";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -59,6 +59,7 @@ namespace API.DataAccess
                 Employees newEmployees = new Employees() { EmpUserName = rdr.GetString(0), EmpPassword = rdr.GetString(1), Emp_ID = rdr.GetInt32(2), Admin = rdr.GetBoolean(3), FName = rdr.GetString(4), LName = rdr.GetString(5)};
                     employees.Add(newEmployees);
             }
+            System.Console.WriteLine(employees[0].EmpUserName + employees[0].EmpPassword);
             con.Close();
             return employees;
         } 

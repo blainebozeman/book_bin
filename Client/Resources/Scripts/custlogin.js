@@ -37,6 +37,8 @@ function createForm()
         {
             CustUserName : event.target.elements.username.value,
             CustPassword : event.target.elements.password.value,
+            FName : "",
+            LName : ""
         }
         // try
         // {
@@ -51,11 +53,28 @@ function createForm()
 
     addForm.appendChild(form);
 }
-function PostCustomer(user)
-{ console.log(user)
+function GetUser(user)
+{
     fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
     body : JSON.stringify(user)
-    }).then((response) => {
+    }).then(function(response){     
         console.log(response);
-    })
+        return response.json();
+    }).then(function(json){
+        console.log(json);
+        ControlBreak(json, user)
+    });
+}
+function ControlBreak(json, user)
+{
+    if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
+    {
+        sessionStorage.setItem('employeeUser', JSON.stringify(json));
+        location.href = "\CustLandingPage.html"
+    }
+    else
+    {
+        error.innerHTML = '';
+        error.appendChild(document.createTextNode("Please enter a valid username and password"));
+    }
 }

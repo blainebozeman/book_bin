@@ -31,11 +31,12 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
-        let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
             EmpUserName : event.target.elements.username.value,
             EmpPassword : event.target.elements.password.value,
+            FName: "",
+            LNAME: ""
         }
         GetUser(user);
     })
@@ -46,7 +47,24 @@ function GetUser(user)
 {
     fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
     body : JSON.stringify(user)
-    }).then((response) => {     
-    console.log(response);
-    })
+    }).then(function(response){     
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        console.log(json);
+        ControlBreak(json, user)
+    });
+}
+function ControlBreak(json, user)
+{
+    if(user.EmpUserName == json[0].empUserName && user.EmpPassword == json[0].empPassword)
+    {
+        sessionStorage.setItem('employeeUser', JSON.stringify(json));
+        location.href = "\EmpLandingPage.html"
+    }
+    else
+    {
+        error.innerHTML = '';
+        error.appendChild(document.createTextNode("Please enter a valid username and password"));
+    }
 }

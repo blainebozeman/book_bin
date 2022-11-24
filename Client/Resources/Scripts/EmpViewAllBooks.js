@@ -1,81 +1,60 @@
-let allBooks = []
-const baseUrl = 'https://countriesnow.space/api/v0.1/countries/population/cities'
-
-const app = document.getElementById('allCities');
-
-
-function handleOnLoad(){
-    let table = createTable();
-    app.appendChild(table);
-
-    GetAllCities();
-}
-
-function GetAllCities(){
-    let allCitiesTable = document.getElementById('allCitiesTable');
-    let count = 0;
-    fetch(baseUrl).then(function(response){
+function getBooks(){
+    const allBooksUrl = "https://localhost:5000/api/books";
+    document.getElementById("books").innerHTML="";
+    fetch(allBooksUrl).then(function(response){
+        console.log(response);
         return response.json();
-
     }).then(function(json){
-        allCities = json;
-        console.log(allCities)
-        console.log(allCities.data[0])
-        console.log(allCities.data[0].populationCounts[0])
-        allCities.data.forEach(city=> {
-            let tableBody = document.getElementById('allCitiesTableBody');
-            let tr = document.createElement('TR');
-            tableBody.appendChild(tr);
+        let ul = document.createElement("ul");
+        json.forEach((book)=>{
+            let dateAdded = new Date(book.dateAdded);
+            let li = document.createElement("li");
 
-            let td1 = document.createElement('TD');
-            td1.width = 300;
-            td1.appendChild(document.createTextNode(`${city.city}`));
-            tr.appendChild(td1);
+            let condition = document.createElement("select");
+            for(let i = 0; i<6; i++){
+                condition.innerHTML+=`<option>${i}</option>`;
+            }
+            condition.value=book.condition;
 
-            let td2 = document.createElement('TD');
-            td2.width = 150;
-            td2.appendChild(document.createTextNode(`${city.country}`));
-            tr.appendChild(td2);
+            li.innerHTML= `Book Title: ${book.Title} <br />
+            Date Added: ${dateAdded.toLocaleDateString('en-US')} <br />
+            
+            `;
+            li.appendChild(condition);
 
-            let td3 = document.createElement('TD');
-            td3.width = 150;
-            city = allCities.data[count].populationCounts[0]
-            td3.appendChild(document.createTextNode(`${city.value}`))
-            tr.appendChild(td3);
-            count++;
-        })
-        
-    })
+            let deleteBtn = document.createElement("button"); //created delete button
+            deleteBtn.innerHTML = "Remove Book";
+
+            //onclick what it does pass driver id
+            deleteBtn.onclick = function () { 
+                deleteBook(book.BookID);
+                li.remove();
+              };
+
+              //added onto list items
+            li.appendChild(deleteBtn);
+            ul.appendChild(li);
+
+            let editBtn = document.createElement("button"); //created edit button
+            editBtn.innerHTML = "Edit Condition";
+            
+
+            editBtn.onclick = function () {
+                // let id = document.getElementById('id').value;
+                // let rating = document.getElementById('rating').value;
+
+                editBook(book.BookID, condition.value);
+              
+            };
+
+            li.appendChild(editBtn);
+            ul.appendChild(li);
+     
+        });
+       
+        document.getElementById("books").appendChild(ul);
+        console.log(json);
+    }).catch(function(error){
+        console.log(error);
+    });
 }
-
-
-    function createTable()
-    {
-    let table = document.createElement('TABLE');
-    table.id = 'allCitiesTable';
-    table.border = '1';
-    let tableBody = document.createElement('TBODY');
-    tableBody.id = 'allCitiesTableBody';
-    table.appendChild(tableBody);
-    
-    
-    let tr = document.createElement('TR');
-    tableBody.appendChild(tr);
-    
-    let th1 = document.createElement('TH');
-    th1.width = 150;
-    th1.appendChild(document.createTextNode('City'));
-    tr.appendChild(th1);
-    
-    let th2 = document.createElement('TH');
-    th2.width = 300;
-    th2.appendChild(document.createTextNode('Country'));
-    tr.appendChild(th2);
-    
-    let th3 = document.createElement('TH');
-    th3.width = 150;
-    th3.appendChild(document.createTextNode('Population'));
-    tr.appendChild(th3);
-    
-    return table;
-    }

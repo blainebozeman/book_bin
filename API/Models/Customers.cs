@@ -2,7 +2,7 @@ namespace API.Models
 {
     public class Customer
     {
-        public Guid CustID{get;set;}
+        public int CustID{get;set;}
         public string CustUserName {get;set;}
         public string CustPassword {get;set;}
         public string FName {get;set;}
