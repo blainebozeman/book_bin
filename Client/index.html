@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script src="./resources/scripts/index.js"></script>
+    <script src="./resources/scripts/index.js"defer></script>
     
     
     <title>The Book Bin</title>
@@ -24,7 +24,23 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <!-- //Search Bar for books Krysilen -->
+        <div class = "search-wrapper">
+            <label for="search">Search Books</label>
+            <input type=" search" id="search">
+        </div>
+        <div class="book-cards">
+            <template data-book-template>
+            <div class="book">
+                <div class="header">Book Name Here</div>
+                <div class="body">Book Title</div>
+                <div class="body">Book Author</div>
+                <!-- other Book Information --> 
+            </div>
+        </template>
+        </div>
 
+        
     </div>
 
     <h2>The Book Bin</h2>
@@ -46,4 +62,4 @@
       </div>  -->
       <script src="./Resources/Scripts/index.js"> </script>
 </body>
-</html>
+</html> 

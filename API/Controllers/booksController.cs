@@ -17,15 +17,28 @@ namespace api.Controllers
     {
         // GET: api/books
         [HttpGet]
+<<<<<<< HEAD
         public List<Books> Getxx()
         {
            IGetAllBooks readObject = new ReadBooks();
            return readObject.GetAllBooks();
+=======
+        public List<Books> Get()
+        {
+            System.Console.WriteLine("HERE");
+            BookData dataAccess = new BookData();
+            return dataAccess.GetAll();
+>>>>>>> refs/remotes/origin/main
         }
+
 
         // GET: api/books/5
         [HttpGet("{id}", Name = "Getx")]
+<<<<<<< HEAD
         public string Get(int Id)
+=======
+        public string Get(int BookID)
+>>>>>>> refs/remotes/origin/main
         {
             IGetBook readObject = new ReadBooks();
             return readObject.GetBook(Id);
@@ -39,13 +52,13 @@ namespace api.Controllers
 
         // PUT: api/books/5
         [HttpPut("{id}")]
-        public void Put(Guid BookID, [FromBody] string value)
+        public void Put(int BookID, [FromBody] string value)
         {
         }
 
         // DELETE: api/books/5
         [HttpDelete("{id}")]
-        public void Delete(Guid BookID)
+        public void Delete(int BookID)
         {
         }
     }
