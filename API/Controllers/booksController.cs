@@ -4,8 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using API.Models;
+using API.Models.Interfaces;
+using API.DataAccess;
 
-namespace book_bin.Controllers
+
+namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -13,16 +17,18 @@ namespace book_bin.Controllers
     {
         // GET: api/books
         [HttpGet]
-        public IEnumerable<string> Getxx()
+        public List<Books> Getxx()
         {
-            return new string[] { "value1", "value2" };
+           IGetAllBooks readObject = new ReadBooks();
+           return readObject.GetAllBooks();
         }
 
         // GET: api/books/5
         [HttpGet("{id}", Name = "Getx")]
-        public string Get(Guid BookID)
+        public string Get(int Id)
         {
-            return "value";
+            IGetBook readObject = new ReadBooks();
+            return readObject.GetBook(Id);
         }
 
         // POST: api/books
