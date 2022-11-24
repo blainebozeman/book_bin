@@ -39,7 +39,7 @@ namespace API.Models
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = "SELECT * from drivers";
+            string stm = "SELECT * from books";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             cmd.Parameters.AddWithValue("@id", BookID);
             cmd.Prepare();
