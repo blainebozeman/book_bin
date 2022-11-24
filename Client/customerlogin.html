@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Customer</title>
+    <title>Customer Log-In</title>
 </head>
-<body>
+<body onload= "handleOnLoad()">
     
     <div class="jumbotron">
         <nav>
@@ -20,22 +20,16 @@
                 <li><a href="addcustomer.html">Create Account</a></li>
             </ul>
         </nav>
-
     </div>
 
-    <h1>Add Customer</h1>
+    <h1>Log In</h1>
 
-    <!-- <form action="process_form.cfm" method="get">
-        <label>Employee ID: <input name="employee"></label>
-        <label>Name: <input name="name"></label>
-        <input type="submit" value="Add Customer">
-    </form> -->
-    <div id = "form">
+    <div id = "login">
 
     </div>
-    
-    <button>Back to Admin Hub</button>
-    
-    <script src="./Resources/Scripts/AddCustomer.js"> </script>
+    <div id = "error">
+
+    </div>
+    <script src="./Resources/Scripts/custlogin.js"> </script>
 </body>
 </html>
