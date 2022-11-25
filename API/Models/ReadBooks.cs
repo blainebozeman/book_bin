@@ -22,8 +22,8 @@ namespace API.Models
 
             List<Books> books = new List<Books>();
             while(rdr.Read()){
-                System.Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1) +  " "  + rdr.GetInt32(2) + " " + rdr.GetString(3) + " " + rdr.GetString(4) + " " + rdr.GetDateTime(5)+ " " + rdr.GetBoolean(6));
-                Books newBook = new Books(){BookID = rdr.GetInt32(0), Title = rdr.GetString(1), Condition = rdr.GetInt32(2), Author = rdr.GetString(3), ISBN = rdr.GetString(4) , DateAdded = rdr.GetDateTime(5), Deleted = rdr.GetBoolean(6)};
+                System.Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1) +  " "  + rdr.GetString(2) + " " + rdr.GetString(3) + " " + rdr.GetInt32(4) + " " + rdr.GetString(5)+ " " + rdr.GetBoolean(6) + "" + rdr.GetDouble(7) + "" + rdr.GetDateTime(8));
+                Books newBook = new Books(){BookID = rdr.GetInt32(0), Title = rdr.GetString(1), Author = rdr.GetString(2), ISBN = rdr.GetString(3), Condition = rdr.GetInt32(4), Genre = rdr.GetString(5), Deleted = rdr.GetBoolean(6), Price = rdr.GetDouble(7), DateAdded = rdr.GetDateTime(8)};
                 books.Add(newBook);
 
                 //public Guid BookID{get;set;}
@@ -46,7 +46,7 @@ namespace API.Models
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
-            return new Books(){BookID = rdr.GetInt32(0), Title = rdr.GetString(1), Condition = rdr.GetInt32(2), Author = rdr.GetString(3), ISBN = rdr.GetString(4) , DateAdded = rdr.GetDateTime(5), Deleted = rdr.GetBoolean(6)};
+            return new Books(){BookID = rdr.GetInt32(0), Title = rdr.GetString(1), Author = rdr.GetString(2), ISBN = rdr.GetString(3), Condition = rdr.GetInt32(4), Genre = rdr.GetString(5), Deleted = rdr.GetBoolean(6), Price = rdr.GetDouble(7), DateAdded = rdr.GetDateTime(8)};
         }
     }
 }

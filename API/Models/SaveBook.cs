@@ -20,6 +20,7 @@ namespace API.Models
             cmd.Parameters.AddWithValue("@Author", book.Author);
             cmd.Parameters.AddWithValue("@ISBN", book.ISBN);
             cmd.Parameters.AddWithValue("@Condition", book.Condition);
+            cmd.Parameters.AddWithValue("@Genre" , book.Genre);
             cmd.Parameters.AddWithValue("@Price", book.Price);
             cmd.Parameters.AddWithValue("@DateAdded", book.DateAdded);
             cmd.Prepare();
