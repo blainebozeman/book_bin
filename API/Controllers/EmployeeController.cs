@@ -40,7 +40,17 @@ namespace book_bin.Controllers
         {
             System.Console.WriteLine("HERE IN POST");
             EmployeeData dataAccess = new EmployeeData();
-            return dataAccess.GetSelect(user); 
+            List<Employees> data;
+            try
+            {
+                data=dataAccess.GetSelect(user); 
+            }
+            catch
+            {
+                System.Console.WriteLine("no user");
+                data = new List<Employees>{new Employees(){EmpUserName = "nothing_here_34759842718928765432"}};
+            }
+            return data;
         }
 
         // PUT: api/Employee/5

@@ -52,7 +52,15 @@ function GetUser(user)
         return response.json();
     }).then(function(json){
         console.log(json);
-        ControlBreak(json, user)
+        if (json.EmpUserName == "nothing_here_34759842718928765432")
+        {
+            error.innerHTML = '';
+            error.appendChild(document.createTextNode("Please enter a valid username and password")); 
+        }
+        else
+        { 
+            ControlBreak(json, user)
+        }
     });
 }
 function ControlBreak(json, user)

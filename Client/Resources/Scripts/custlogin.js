@@ -53,7 +53,7 @@ function createForm()
 
     addForm.appendChild(form);
 }
-function GetUser(user)
+function PostCustomer(user)
 {
     fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
     body : JSON.stringify(user)
@@ -62,14 +62,22 @@ function GetUser(user)
         return response.json();
     }).then(function(json){
         console.log(json);
-        ControlBreak(json, user)
+        if (json.CustUserName == "nothing_here_34759842718928765432")
+        {
+            error.innerHTML = '';
+            error.appendChild(document.createTextNode("Please enter a valid username and password")); 
+        }
+        else
+        { 
+            ControlBreak(json, user)
+        }
     });
 }
 function ControlBreak(json, user)
 {
     if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
     {
-        sessionStorage.setItem('employeeUser', JSON.stringify(json));
+        sessionStorage.setItem('customerUser', JSON.stringify(json));
         location.href = "\CustLandingPage.html"
     }
     else

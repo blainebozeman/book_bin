@@ -19,7 +19,7 @@ namespace API.DataAccess
             }
             catch (System.Exception)
             {
-                System.Console.WriteLine("It's open");
+                System.Console.WriteLine("It's not open");
             }
 
             string stm = $"SELECT * from customers WHERE UserName LIKE '{user.CustUserName}' and CustPassword LIKE '{user.CustPassword}';";
@@ -31,6 +31,7 @@ namespace API.DataAccess
                 Customer newCustomer = new Customer() { CustID = rdr.GetInt32(0), FName = rdr.GetString(1), LName = rdr.GetString(2), Credits = rdr.GetInt32(3), CustUserName = rdr.GetString(4), Emp_ID = rdr.GetInt32(5), CustPassword = rdr.GetString(6)};
                 customers.Add(newCustomer);
             }
+            System.Console.WriteLine(customers[0].CustUserName + customers[0].CustPassword);
             con.Close();
             return customers;
         } 

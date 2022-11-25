@@ -4,6 +4,6 @@ namespace API.Models.Interfaces
 {
     public interface IEditBook
     {
-         void EditBook(Books value);
+         void EditBooks(Books value);
     }
 }

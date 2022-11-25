@@ -30,9 +30,40 @@ namespace book_bin.Controllers
         [HttpPost]
         public List<Customer> Post([FromBody] Customer user)
         {
+            // System.Console.WriteLine("HERE IN POST");
+            // GetCustomers dataAccess = new GetCustomers();
+            // return dataAccess.GetSelect(user); 
             System.Console.WriteLine("HERE IN POST");
-            GetCustomers dataAccess = new GetCustomers();
-            return dataAccess.GetSelect(user); 
+            List<Customer> data;
+            if (user.FName == "")
+            {
+                GetCustomers dataAccess = new GetCustomers();
+                try
+                {
+                    data=dataAccess.GetSelect(user); 
+                }
+                catch
+                {
+                    System.Console.WriteLine("no user");
+                    data = new List<Customer>{new Customer(){CustUserName = "nothing_here_34759842718928765432"}};
+                }
+                return data;
+            }
+            else
+            {
+                System.Console.WriteLine("Adding New Customer");
+                try
+                {
+                    AddCustomers dataAccess = new AddCustomers();
+                    return dataAccess.PutCustomer(user);
+                }
+                catch
+                {
+                    System.Console.WriteLine("no user");
+                    data = new List<Customer>{new Customer(){CustUserName = "nothing_here"}};
+                    return data; 
+                }
+            }
         }
 
         // PUT: api/customers/5

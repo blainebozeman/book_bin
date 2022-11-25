@@ -47,7 +47,7 @@ namespace API.DataAccess
             }
             catch (System.Exception)
             {
-                System.Console.WriteLine("It's open");
+                System.Console.WriteLine("It's not open");
             }
 
             string stm = $"SELECT * from employees WHERE EmpUserName LIKE '{user.EmpUserName}' and EmpPassword LIKE '{user.EmpPassword}';";

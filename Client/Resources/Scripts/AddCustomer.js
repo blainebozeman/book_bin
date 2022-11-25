@@ -1,4 +1,5 @@
 let addForm = document.getElementById("form")
+let message = document.getElementById("message")
 const categoryurl = "https://localhost:5001/api/customers"
 
 function handleOnLoad()
@@ -13,13 +14,13 @@ function createForm()
     let fName = document.createElement("input");
     fName.type = "text";
     fName.placeholder = "First Name";
-    fName.id = "firstname";
+    fName.id = "fName";
     form.appendChild(fName);
 
     let lName = document.createElement("input");
     lName.type = "text";
     lName.placeholder = "Last Name";
-    lName.id = "lastname";
+    lName.id = "lName";
     form.appendChild(lName);
 
     let user = document.createElement("input");
@@ -42,7 +43,6 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
-        let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
             CustUserName : event.target.elements.username.value,
@@ -69,14 +69,14 @@ function PostUser(user)
 }
 function ControlBreak(json, user)
 {
-    if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
+    if(json[0].custUserName == "nothing_here")
     {
-        sessionStorage.setItem('employeeUser', JSON.stringify(json));
-        location.href = "\CustLandingPage.html"
+        message.innerHTML = '';
+        message.appendChild(document.createTextNode("This user already exists. Please choose another username."));
     }
     else
     {
-        error.innerHTML = '';
-        error.appendChild(document.createTextNode("Please enter a valid username and password"));
+        message.innerHTML = '';
+        message.appendChild(document.createTextNode("Success!"));
     }
 }
