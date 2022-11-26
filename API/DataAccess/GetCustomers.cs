@@ -1,8 +1,9 @@
 using MySql.Data.MySqlClient;
 using API.Models;
+using API.Models.Interfaces;
 namespace API.DataAccess
 {
-    public class GetCustomers
+    public class GetCustomers: IGetCustomer
     {
         public List<Customer> GetSelect(Customer user)
         {

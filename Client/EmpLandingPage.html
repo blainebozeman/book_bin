@@ -7,12 +7,38 @@
     <title>Welcome!</title>
 </head>
 <body onload="handleOnLoad()">
-    <div id = "user">
+        
+    <div class="jumbotron">
+        <div id = user>
 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fullinventoryview.html">Book Library</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="customerlogin.html">Customer Log In</a></li>
+                <li><a href="employeeloginpage.html">Employee Log In</a></li>
+                <li><a href="addcustomer.html">Create Account</a></li>
+            </ul>
+        </nav>
     </div>
-    <div id="addcustomer">
-        <button onclick="handleOnClick()">Add Customer</button>
+
+    <h1>Employee Hub</h1>
+
+    <div>
+
+<!-- Can possibly change all the options below into just one button with the action name on the button like in admin hub* -->
+
+    <h3>View Detailed Inventory Report: </h3><button onclick="handleOnClick('fullinventoryview.html')">Go</button>
+    <h3>Update Inventory: </h3><button onclick="handleOnClick('addbooks.html')">Go</button>
+    <h3>Add Customers: </h3><button onclick="handleOnClick('AddCustomer.html')">Go</button>
+    <h3>Add Credits: </h3><button onclick="handleOnClick('addcredits1.html')">Go</button>
+    <h3>Checkout Customer: </h3><button onclick="handleOnClick('custcheckout1.html')">Go</button>
+    <h3>Log Out</h3><button>Go</button>
     </div>
+
 <script src="./Resources/Scripts/EmpLandingPage.js"> </script>
 </body>
 </html>

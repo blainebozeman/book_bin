@@ -1,8 +1,9 @@
 using MySql.Data.MySqlClient;
 using API.Models;
+using API.Models.Interfaces;
 namespace API.DataAccess
 {
-    public class AddCustomers
+    public class AddCustomers : IAddCustomer
     {
         public List<Customer> PutCustomer(Customer user)
         {

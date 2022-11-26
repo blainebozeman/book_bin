@@ -5,10 +5,10 @@ let user = document.getElementById("user")
 function handleOnLoad()
 {
     console.log(employee);
-    user.appendChild(document.createTextNode(employee[0].fName)); 
+    user.appendChild(document.createTextNode("Welcome, " + employee[0].fName)); 
 }
 
-function handleOnClick()
+function handleOnClick(temp)
 {
-    location.href = "AddCustomer.html"
+    location.href = temp
 }
