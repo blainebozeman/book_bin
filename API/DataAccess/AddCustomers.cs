@@ -32,7 +32,7 @@ namespace API.DataAccess
             // MySqlDataReader rdr = cmd.ExecuteReader();
             // try
             // {
-            string stm = $"INSERT INTO `fdfpqo2wtkd2rwyf`.`customers` (`CustFName`, `CustLName`, `CustCredits`, `UserName`, `Emp_id`, `CustPassword`) VALUES ('{user.FName}', '{user.LName}', '0', '{user.CustUserName}', '1', '{user.CustPassword}');";
+            string stm = $"INSERT INTO `fdfpqo2wtkd2rwyf`.`customers` (`CustFName`, `CustLName`, `CustCredits`, `UserName`, `Emp_id`, `CustPassword`) VALUES ('{user.FName}', '{user.LName}', '0', '{user.CustUserName}', '{user.CustID}', '{user.CustPassword}');";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             cmd.ExecuteNonQuery();
             customers.Add(user);

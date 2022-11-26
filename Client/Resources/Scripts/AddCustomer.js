@@ -1,6 +1,7 @@
 let addForm = document.getElementById("form")
 let message = document.getElementById("message")
 const categoryurl = "https://localhost:5001/api/customers"
+let employee = JSON.parse(sessionStorage.getItem('employeeUser'));
 
 function handleOnLoad()
 {
@@ -45,6 +46,7 @@ function createForm()
         event.preventDefault();
         let user = 
         {
+            CustID : employee[0].Emp_ID,
             CustUserName : event.target.elements.username.value,
             CustPassword : event.target.elements.password.value,
             FName : event.target.elements.fName.value,
