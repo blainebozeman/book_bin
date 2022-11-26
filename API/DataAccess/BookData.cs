@@ -6,7 +6,7 @@ namespace API.DataAccess
     {
         public List<Books> GetAll()
         {
-            List<Books> book = new List<Books>();
+            List<Books> books = new List<Books>();
             ConnectionString connectionString = new ConnectionString();
             string cs = connectionString.cs;
             MySqlConnection con = new MySqlConnection(cs);
@@ -27,7 +27,7 @@ namespace API.DataAccess
             while (rdr.Read())
             {
                 Books newBook = new Books() { BookID = rdr.GetInt32(0), Title = rdr.GetString(1), Author = rdr.GetString(2), ISBN = rdr.GetString(3), Condition = rdr.GetInt32(4), Deleted = rdr.GetBoolean(5)};
-                books.Add(newBooks);
+                books.Add(newBook);
             }
             con.Close();
             return books;
