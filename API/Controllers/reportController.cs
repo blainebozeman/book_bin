@@ -19,7 +19,7 @@ namespace book_bin.Controllers
         }
 
         // GET: api/report/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "Getxxx")]
         public string Get(int id)
         {
             return "value";
