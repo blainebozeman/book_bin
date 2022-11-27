@@ -25,7 +25,7 @@ function getBooks(){
             let deleteBtn = document.createElement("button"); //created delete button
             deleteBtn.innerHTML = "Remove Book";
 
-            //onclick what it does pass driver id
+            //onclick what it does pass book id
             deleteBtn.onclick = function () { 
                 deleteBook(book.BookID);
                 li.remove();
@@ -40,8 +40,8 @@ function getBooks(){
             
 
             editBtn.onclick = function () {
-                // let id = document.getElementById('id').value;
-                // let rating = document.getElementById('rating').value;
+                let bookid = document.getElementById('BookID').value;
+                let conditon = document.getElementById('condition').value;
 
                 editBook(book.BookID, condition.value);
               

@@ -37,21 +37,27 @@ namespace book_bin.Controllers
         }
 
         // POST: api/books
-        [HttpPost("upload", Name = "uploadx")]
-        public void Post([FromBody] string value)
+        [HttpPost]
+        public void Post([FromBody] Books book)
         {
+            IAddBook addObject = new SaveBook();
+            addObject.AddBook(book);
         }
 
         // PUT: api/books/5
         [HttpPut("{id}")]
-        public void Put(int BookID, [FromBody] string value)
+        public void Put(int BookID, int Condition, [FromBody] Books book)
         {
+            IEditBook editObject = new EditBook();
+            editObject.EditBooks(book);
         }
 
         // DELETE: api/books/5
         [HttpDelete("{id}")]
         public void Delete(int BookID)
         {
+            IDeleteBook deleteObject = new DeleteBook();
+            deleteObject.RemoveBook(BookID);
         }
     }
 }
