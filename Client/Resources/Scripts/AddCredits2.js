@@ -8,6 +8,11 @@ let CustomerCredit = document.getElementById("CustomerCredits");
 let addForm = document.getElementById("addForm")
 let error = document.getElementById("error")
 
+function handleBack()
+{
+    location.href = "\EmpLandingPage.html."
+}
+
 function handleOnLoad()
 {
     createForm()
@@ -94,6 +99,6 @@ function ControlBreak(json, user)
     else
     {
         error.innerHTML = '';
-        error.appendChild(document.createTextNode("Please enter a valid username and password"));
+        error.appendChild(document.createTextNode("Sorry, some error has occured"));
     }
 }
