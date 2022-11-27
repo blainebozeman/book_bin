@@ -9,7 +9,7 @@ searchInput.addEventListener("input", e => {
     books.forEach(book => {
         const isVisble =
         book.title.toLowerCase().includes(value)||
-        book.email.toLowerCase().includes(value)
+        book.author.toLowerCase().includes(value)
         book.element.classList.toggle("hide", !isVisble)
     })
 })
@@ -17,14 +17,15 @@ searchInput.addEventListener("input", e => {
 fetch("https://localhost:5001/api/books")
 .then(res => res.json())
 .then(data => {
-    data.forEach(book => {
-    const books = bookCardTemplate.content.cloneNode(true).children[0]
-    const header = books.querySelector("[data-header]")
-    const body = books.querySelector("[data-body]")
+    books = data.map(book=>{
+    //data.forEach(book => {
+    const bookCard = bookCardTemplate.content.cloneNode(true).children[0]
+    const header = bookCard.querySelector("[data-header]")
+    const body = bookCard.querySelector("[data-body]")
     header.textContent = book.title
     body.textContent = book.author
     
-    bookCardContainer.append(book)
+    bookCardContainer.append(bookCard)
     
     return {title: book.title, author: book.author, element: book}
 })
