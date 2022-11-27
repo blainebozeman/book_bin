@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using API.DataAccess;
 using API.Models;
+using API.Models.Interfaces;
 
 namespace book_bin.Controllers
 {
@@ -18,8 +20,10 @@ namespace book_bin.Controllers
         public List<Books> Get()
         {
             System.Console.WriteLine("HERE");
-            BookData dataAccess = new BookData();
-            return dataAccess.GetAll();
+            IGetAllBooks readObject = new ReadBooks();
+            return readObject.GetAllBooks();
+            // BookData dataAccess = new BookData();
+            // return dataAccess.GetAll();
         }
 
 

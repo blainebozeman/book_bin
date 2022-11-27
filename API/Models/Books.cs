@@ -6,12 +6,11 @@ namespace API.Models
         public int BookID{get;set;}
         public string Title{get;set;}
         public string Author{get;set;}
-        public string ISBN{get;set;}
-        public int Condition {get; set;}
-
+        public int ISBN{get;set;}
+        public string Condition{get; set;}
         public string Genre {get; set;}
 
-        public bool Deleted {get; set;}
+        public int Deleted {get; set;}
 
         public double Price {get; set;}
 

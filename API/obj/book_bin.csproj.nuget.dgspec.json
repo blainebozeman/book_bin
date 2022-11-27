@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/treyezell/Desktop/UA Fall 2022/MIS 321/Group Project/Code Repos/Code_Retry_v1/book_bin/API/book_bin.csproj": {}
+    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {}
   },
   "projects": {
-    "/Users/treyezell/Desktop/UA Fall 2022/MIS 321/Group Project/Code Repos/Code_Retry_v1/book_bin/API/book_bin.csproj": {
+    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/treyezell/Desktop/UA Fall 2022/MIS 321/Group Project/Code Repos/Code_Retry_v1/book_bin/API/book_bin.csproj",
+        "projectUniqueName": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
         "projectName": "book_bin",
-        "projectPath": "/Users/treyezell/Desktop/UA Fall 2022/MIS 321/Group Project/Code Repos/Code_Retry_v1/book_bin/API/book_bin.csproj",
-        "packagesPath": "/Users/treyezell/.nuget/packages/",
-        "outputPath": "/Users/treyezell/Desktop/UA Fall 2022/MIS 321/Group Project/Code Repos/Code_Retry_v1/book_bin/API/obj/",
+        "projectPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
+        "packagesPath": "C:\\Users\\krysi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/treyezell/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\krysi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -57,7 +57,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -69,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
