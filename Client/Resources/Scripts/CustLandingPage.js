@@ -3,8 +3,7 @@ let user = document.getElementById("user")
 
 function handleOnLoad()
 {
-    console.log(employee);
-    user.appendChild(document.createTextNode(employee[0].fName)); 
+    console.log(customer)
 }
 function handleOnClick()
 {

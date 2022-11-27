@@ -1,28 +1,42 @@
-let addForm = document.getElementById("login")
+let customer = JSON.parse(sessionStorage.getItem('customerUser'));
+let employee = JSON.parse(sessionStorage.getItem('employeeUser'));
 const categoryurl = "https://localhost:5001/api/customers"
-let error = document.getElementById("error")
 
+let CustomerID = document.getElementById("CustomerID");
+let CustomerName = document.getElementById("CustomerName");
+let CustomerCredit = document.getElementById("CustomerCredits");
+let addForm = document.getElementById("addForm")
+let error = document.getElementById("error")
 
 function handleOnLoad()
 {
-    createForm();
+    createForm()
+    SetPage();
+}
+function SetPage()
+{
+    console.log(customer)
+    CustomerID.textContent= "Customer ID: " + customer[0].custID;
+    CustomerName.textContent = "Customer Name: " + customer[0].fName + " " + customer[0].lName;
+    if(customer[0].credits != 0)
+    {
+        CustomerCredit.textContent = "Customer Credit: $" + customer[0].credits;
+    }
+    else 
+    {
+        customer[0].credits = 0
+        CustomerCredit.textContent = "Customer Credit: $" + customer[0].credits;
+    }
 }
 
 function createForm()
 {
     let form = document.createElement("form");
-
-    let user = document.createElement("input");
-    user.type = "text";
-    user.placeholder = "Username";
-    user.id = "username";
-    form.appendChild(user);
-
-    let pass = document.createElement("input");
-    pass.type = "password";
-    pass.placeholder = "Password";
-    pass.id = "password";
-    form.appendChild(pass);
+    let credits = document.createElement("input");
+    credits.type = "text";
+    credits.placeholder = "Credits to Add";
+    credits.id = "credits";
+    form.appendChild(credits);
 
     let submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
@@ -35,12 +49,16 @@ function createForm()
         let errormessage = document.createTextNode("Please enter a valid username and password")
         let user = 
         {
-            CustUserName : event.target.elements.username.value,
-            CustPassword : event.target.elements.password.value,
-            FName : "",
-            LName : ""
+            CustID : customer[0].custID,
+            CustUserName : customer[0].custUserName,
+            CustPassword : customer[0].custPassword,
+            FName : customer[0].fName,
+            LName : customer[0].lName,
+            Credits : parseInt(customer[0].credits)+parseInt(event.target.elements.credits.value)
         }
-            PostCustomer(user)
+        console.log(user);
+        PostCustomer(user)
+        form.reset();
     })
 
     addForm.appendChild(form);
@@ -70,7 +88,8 @@ function ControlBreak(json, user)
     if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
     {
         sessionStorage.setItem('customerUser', JSON.stringify(json));
-        location.href = "\CustLandingPage.html"
+        customer = JSON.parse(sessionStorage.getItem('customerUser'));
+        SetPage();
     }
     else
     {
