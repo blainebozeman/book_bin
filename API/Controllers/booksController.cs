@@ -28,10 +28,11 @@ namespace book_bin.Controllers
 
 
         // GET: api/books/5
-        [HttpGet("{id}", Name = "Getx")]
-        public string Get(int BookID)
+        [HttpGet("{bookID}", Name = "Get")]
+        public Books Get(int BookID)
         {
-            return "value";
+            IGetBook readObject = new ReadBooks();
+            return readObject.GetBook(BookID);
         }
 
         // POST: api/books
