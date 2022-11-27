@@ -18,7 +18,7 @@ function createForm()
     form.appendChild(user);
 
     let pass = document.createElement("input");
-    pass.type = "text";
+    pass.type = "password";
     pass.placeholder = "Password";
     pass.id = "password";
     form.appendChild(pass);

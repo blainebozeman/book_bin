@@ -49,6 +49,20 @@ namespace book_bin.Controllers
                 }
                 return data;
             }
+            else if(user.Credits != 0)
+            {
+                UpdateCustomers dataAccess = new UpdateCustomers();
+                try
+                {
+                    data=dataAccess.UpdateCredit(user); 
+                }
+                catch
+                {
+                    System.Console.WriteLine("no user");
+                    data = new List<Customer>{new Customer(){CustUserName = "nothing_here_34759842718928765432"}};
+                }
+                return data;
+            }
             else
             {
                 System.Console.WriteLine("Adding New Customer");

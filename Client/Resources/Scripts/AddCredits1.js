@@ -2,12 +2,24 @@ let addForm = document.getElementById("login")
 const categoryurl = "https://localhost:5001/api/customers"
 let error = document.getElementById("error")
 
-
+//Handle on Load
 function handleOnLoad()
 {
     createForm();
 }
 
+//Begin checkout
+function handleCheckout()
+{
+    location.href = "\addcredits2.html"
+}
+
+function handleBack()
+{
+    location.href = "\EmpLandingPage.html."
+}
+
+//Login Form
 function createForm()
 {
     let form = document.createElement("form");
@@ -45,6 +57,8 @@ function createForm()
 
     addForm.appendChild(form);
 }
+
+//Login Check
 function PostCustomer(user)
 {
     fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
@@ -70,7 +84,8 @@ function ControlBreak(json, user)
     if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
     {
         sessionStorage.setItem('customerUser', JSON.stringify(json));
-        location.href = "\CustLandingPage.html"
+        error.appendChild(document.createTextNode("User Found!"));
+
     }
     else
     {

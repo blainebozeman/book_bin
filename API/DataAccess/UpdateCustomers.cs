@@ -19,7 +19,7 @@ namespace API.DataAccess
             //Is it open?
             try
             {
-                System.Console.WriteLine("made it here");
+                System.Console.WriteLine("made it to update credits");
                 con.Open();
             }
             catch (System.Exception)
@@ -32,7 +32,7 @@ namespace API.DataAccess
             cmd.ExecuteNonQuery();
             customers.Add(user);
             con.Close();
-            System.Console.WriteLine(customers[0].CustUserName + customers[0].CustPassword);
+            System.Console.WriteLine(customers[0].CustUserName + customers[0].CustPassword + customers[0].Credits);
             con.Close();
             return customers;
         }
