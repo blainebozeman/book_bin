@@ -41,7 +41,7 @@ function createForm()
     let credits = document.createElement("input");
     credits.type = "text";
     credits.placeholder = "BookID to Buy";
-    credits.id = "credits";
+    credits.id = "bookID";
     form.appendChild(credits);
 
     let submitButton = document.createElement("button");
@@ -52,41 +52,72 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
-        let user = 
+        let book = 
         {
-            CustID : customer[0].custID,
-            CustUserName : customer[0].custUserName,
-            CustPassword : customer[0].custPassword,
-            FName : customer[0].fName,
-            LName : customer[0].lName,
-            Credits : parseInt(customer[0].credits)+parseInt(event.target.elements.credits.value)
+            BookID : event.target.elements.bookID.value,
+            Title : "",
+            Author : "",
+            Condition : "",
+            Genre : ""
+            //Credits : parseInt(customer[0].credits)+parseInt(event.target.elements.credits.value)
         }
-        console.log(user);
-        PostCustomer(user)
+        console.log(book);
+        GetBook(book)
         form.reset();
     })
 
     addForm.appendChild(form);
 }
-function PostCustomer(user)
+function GetBook(book)
 {
-    fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
-    body : JSON.stringify(user)
-    }).then(function(response){     
+    fetch("https://localhost:5001/api/books/"+book.BookID).then(function(response)
+    {     
         console.log(response);
         return response.json();
     }).then(function(json){
         console.log(json);
-        if (json.CustUserName == "nothing_here_34759842718928765432")
-        {
-            message.innerHTML = '';
-            message.appendChild(document.createTextNode("Please enter a valid username and password")); 
-        }
-        else
-        { 
-            ControlBreak(json, user)
-        }
+        // if (json.CustUserName == "nothing_here_34759842718928765432")
+        // {
+        //     error.innerHTML = '';
+        //     error.appendChild(document.createTextNode("Please enter a valid username and password")); 
+        // }
+        // else
+        // { 
+        //     ControlBreak(json, user)
+        // }
     });
+// .then(res => res.json())
+// .then(data => {
+//     books = data.map(book=>{
+//     //data.forEach(book => {
+//     const bookCard = bookCardTemplate.content.cloneNode(true).children[0]
+//     const header = bookCard.querySelector("[data-header]")
+//     const body = bookCard.querySelector("[data-body]")
+//     header.textContent = book.title
+//     body.textContent = book.author
+    
+//     bookCardContainer.append(bookCard)
+    
+// //     return {title: book.title, author: book.author, element: book}
+// })
+// })
+    // fetch(categoryurl, {method: 'GET', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    // body : JSON.stringify(book)
+    // }).then(function(response){     
+    //     console.log(response);
+    //     return response.json();
+    // }).then(function(json){
+    //     console.log(json);
+    //     if (json.CustUserName == "nothing_here_34759842718928765432")
+    //     {
+    //         message.innerHTML = '';
+    //         message.appendChild(document.createTextNode("Please enter a valid username and password")); 
+    //     }
+    //     else
+    //     { 
+    //         ControlBreak(json, user)
+    //     }
+    // });
 }
 function ControlBreak(json, user)
 {

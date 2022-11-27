@@ -31,6 +31,7 @@ namespace book_bin.Controllers
         [HttpGet("{bookID}", Name = "Get")]
         public Books Get(int BookID)
         {
+            System.Console.WriteLine(BookID);
             IGetBook readObject = new ReadBooks();
             return readObject.GetBook(BookID);
         }
