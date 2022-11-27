@@ -6,6 +6,7 @@ let employee = JSON.parse(sessionStorage.getItem('employeeUser'));
 function handleOnLoad()
 {
     createForm();
+    console.log(employee);
 }
 
 function createForm()
@@ -44,15 +45,32 @@ function createForm()
     form.addEventListener("submit", function(event)
     {
         event.preventDefault();
-        let user = 
+        try
         {
-            CustID : employee[0].Emp_ID,
-            CustUserName : event.target.elements.username.value,
-            CustPassword : event.target.elements.password.value,
-            FName : event.target.elements.fName.value,
-            LName : event.target.elements.lName.value
+            let user = 
+            {
+                CustID : employee[0].emp_ID,
+                CustUserName : event.target.elements.username.value,
+                CustPassword : event.target.elements.password.value,
+                FName : event.target.elements.fName.value,
+                LName : event.target.elements.lName.value
+            }
+            console.log(user)
+            PostUser(user)
         }
-        PostUser(user)
+        catch
+        {
+            let user = 
+            {
+                CustID : 0,
+                CustUserName : event.target.elements.username.value,
+                CustPassword : event.target.elements.password.value,
+                FName : event.target.elements.fName.value,
+                LName : event.target.elements.lName.value
+            }
+            console.log(user)
+            PostUser(user)
+        }
     })
 
     addForm.appendChild(form);
