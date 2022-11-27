@@ -51,7 +51,8 @@ namespace API.Models
 
         public Books GetBook(int BookID)
         {
-            string cs = "server= h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;user=hllptjk6934naxti;database=fdfpqo2wtkd2rwyf;port=3306;password=g9sovn4chedx08w6";
+            string cs = "server= h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;user=hllptjk6934naxti;database=fdfpqo2wtkd2rwyf;port=3306;password=g9sovn4chedx08w6; Convert Zero DateTime=True";
+           // string cs = "server= h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;user=hllptjk6934naxti;database=fdfpqo2wtkd2rwyf;port=3306;password=g9sovn4chedx08w6";
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
 
@@ -63,13 +64,13 @@ namespace API.Models
 
             rdr.Read();
             return new Books(){
-                BookID = rdr.GetInt32(0), 
+                ISBN = rdr.GetInt32(0),
                 Title = rdr.GetString(1), 
-                Author = rdr.GetString(2),
-                ISBN = rdr.GetInt32(3), 
-                Condition = rdr.GetString(4), 
-                Genre = rdr.GetString(5), 
-                Deleted = rdr.GetInt32(6), 
+                Author = rdr.GetString(2), 
+                Condition = rdr.GetString(3),
+                Genre = rdr.GetString(4),
+                BookID = rdr.GetInt32(5),
+                Deleted = rdr.GetInt32(6),
                 Price = rdr.GetDouble(7), 
                 DateAdded = rdr.GetDateTime(8)
             };
