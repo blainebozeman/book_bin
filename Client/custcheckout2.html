@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <link rel="stylesheet" href="./resources/styles/style.css">
-<body>
+<body onload="handleOnLoad()">
     
     <div class="jumbotron">
         <nav>
@@ -27,10 +27,27 @@
             <!-- will be updating this section with table functionality to pair with javascript logic to manipulate the dom -->
     <h1>Customer Checkout</h1>
 
-    <form action="process_form.cfm" method="get">
+    <h5 id="CustomerID">Customer ID: </h5>
+    <h5 id="CustomerName">Name: </h5>
+    <h5 id="CustomerCredits">Current Credits: </h5>
+    <br>
+    <div id = "addForm">
+
+    </div>
+    <br>
+    <div id = "message">
+
+    </div>
+    <br>
+    <div id= "books">
+
+    </div>
+
+
+    <!-- <form action="process_form.cfm" method="get">
         <label>Item ID: <input name="item_id"></label>
         <input type="submit" value="Add Item">
-    </form>
+    </form> -->
     
     
     <h3>Total Price: </h3>
@@ -39,6 +56,7 @@
     <button>Submit Order</button>
     <button>Back to Employee Hub</button>
 
+    <script src="./Resources/Scripts/custcheckout2.js"> </script>
 
 </body>
 </html>

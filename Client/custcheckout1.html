@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <link rel="stylesheet" href="./resources/styles/style.css">
-<body>
+<body onload="handleOnLoad()">
     
     <div class="jumbotron">
         <nav>
@@ -26,17 +26,27 @@
     </div>
 
     <h1>Customer Checkout</h1>
+    <br>
+    
+    <h2>Customer Log In:</h2>
 
-    <form action="process_form.cfm" method="get">
+    <div id = "login">
+
+    </div>
+    <div id = "error">
+
+    </div>
+    <!-- <form action="process_form.cfm" method="get">
         <label>Customer ID: <input name="customer_id"></label>
         <label>Employee ID: <input name="employee_id"></label>
         <input type="submit" value="Update">
-    </form>
+    </form> -->
+    <br>
     
-    
-    <button>Begin Checkout</button>
-    <button>Back to Home</button>
+    <button onclick="handleCheckout()">Begin Checkout</button>
+    <button onclick="handleBack()">Back to Home</button>
 
+    <script src="./Resources/Scripts/custcheckout1.js"> </script>
 
 </body>
 </html>
