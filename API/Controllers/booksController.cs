@@ -36,8 +36,20 @@ namespace book_bin.Controllers
         public Books Get(int BookID)
         {
             System.Console.WriteLine(BookID);
+            //IGetBook readObject = new ReadBooks();
+            //return readObject.GetBook(BookID);
+            Books data;
             IGetBook readObject = new ReadBooks();
-            return readObject.GetBook(BookID);
+            try
+            {
+                data=readObject.GetBook(BookID); 
+            }
+            catch
+            {
+                System.Console.WriteLine("no user");
+                data = new Books(){Title = "nothing_here_34759842718928765432"};
+            }
+            return data;
         }
 
         // POST: api/books
