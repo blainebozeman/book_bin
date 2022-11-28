@@ -1,6 +1,7 @@
 let customer = JSON.parse(sessionStorage.getItem('customerUser'));
 let employee = JSON.parse(sessionStorage.getItem('employeeUser'));
 const categoryurl = "https://localhost:5001/api/customers"
+const reporturl = "https://localhost:5001/api/report"
 
 let CustomerID = document.getElementById("CustomerID");
 let CustomerName = document.getElementById("CustomerName");
@@ -17,9 +18,38 @@ function handleBack()
     location.href = "\EmpLandingPage.html."
 }
 
-function handleSubmit()
+function handleSubmit(bookList)
 {
+    bookList.forEach (driver => {
+        const deleteBooksURL = "https://localhost:5001/api/books/" + driver.bookID;
+        
+        fetch(deleteBooksURL, {
+            method: "DELETE",
+            headers: {
+                "Accept": 'application/json',
+                "Content-Type": 'application/json'
+                // 'Access-Control-Allow-Origin, https://localhost:5001/api/books'
+            }
+        
+        })
     
+        .then((response)=> {
+            console.log(response);
+            // getDrivers();
+        })
+    })
+    let user = 
+    {
+        Cust_id : customer[0].custID,
+        Emp_id : employee[0].empid,
+        TotalAmount : price
+    }
+    fetch(reporturl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    body : JSON.stringify(user)
+    }).then(function(response){     
+        console.log(response);
+        return response.json();
+    })
 }
 
 function handleOnLoad()
