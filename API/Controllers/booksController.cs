@@ -5,17 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using API.DataAccess;
 using API.Models;
 using API.Models.Interfaces;
 
 namespace book_bin.Controllers
 {
+    [EnableCors("OpenPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class booksController : ControllerBase
     {
         // GET: api/books
+        [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<Books> Get()
         {
@@ -28,6 +31,7 @@ namespace book_bin.Controllers
 
 
         // GET: api/books/5
+        [EnableCors("OpenPolicy")]
         [HttpGet("{bookID}", Name = "Get")]
         public Books Get(int BookID)
         {
@@ -37,6 +41,7 @@ namespace book_bin.Controllers
         }
 
         // POST: api/books
+        [EnableCors("OpenPolicy")]
         [HttpPost]
         public void Post([FromBody] Books book)
         {
@@ -45,6 +50,7 @@ namespace book_bin.Controllers
         }
 
         // PUT: api/books/5
+        [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int BookID, int Condition, [FromBody] Books book)
         {
@@ -53,6 +59,7 @@ namespace book_bin.Controllers
         }
 
         // DELETE: api/books/5
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int BookID)
         {
