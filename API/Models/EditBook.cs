@@ -13,7 +13,7 @@ namespace API.Models
 
             string stm = $"update books set condition=@Condition where BookID= @BookID";
             MySqlCommand cmd = new MySqlCommand(stm, con);
-            cmd.Parameters.AddWithValue("@condition", book.Condition);
+            cmd.Parameters.AddWithValue("@Condition", book.Condition);
 
             cmd.Parameters.AddWithValue("@BookID", book.BookID);
             cmd.Prepare();

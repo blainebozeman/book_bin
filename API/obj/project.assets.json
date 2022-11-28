@@ -9390,11 +9390,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\krysi\\.nuget\\packages\\": {}
+=======
+    "/Users/blainebozeman/.nuget/packages/": {}
+>>>>>>> 660055db491dada6a5e58431088184356a13a114
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
       "projectName": "book_bin",
       "projectPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
@@ -9403,6 +9408,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\krysi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "/Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/API/book_bin.csproj",
+      "projectName": "book_bin",
+      "projectPath": "/Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/API/book_bin.csproj",
+      "packagesPath": "/Users/blainebozeman/.nuget/packages/",
+      "outputPath": "/Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/API/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/blainebozeman/.nuget/NuGet/NuGet.Config"
+>>>>>>> 660055db491dada6a5e58431088184356a13a114
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -9458,7 +9473,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+>>>>>>> 660055db491dada6a5e58431088184356a13a114
       }
     }
   }
