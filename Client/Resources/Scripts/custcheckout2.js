@@ -17,6 +17,11 @@ function handleBack()
     location.href = "\EmpLandingPage.html."
 }
 
+function handleSubmit()
+{
+    
+}
+
 function handleOnLoad()
 {
     createForm()
@@ -54,13 +59,13 @@ tableRow.style.border = "1px solid #000";
 tableBody.appendChild(tableRow);
 
 let tableHeader1 = document.createElement("th");
-tableHeader1.style.width = "200px"
+tableHeader1.style.width = "100px"
 tableHeader1.style.border = "1px solid #000";
 tableHeader1.appendChild(document.createTextNode('Book ID'));
 tableRow.appendChild(tableHeader1);
 
 let tableHeader2 = document.createElement("th");
-tableHeader2.style.width = "75px"
+tableHeader2.style.width = "200px"
 tableHeader2.style.border = "1px solid #000";
 tableHeader2.appendChild(document.createTextNode('Book Title'));
 tableRow.appendChild(tableHeader2);
@@ -80,7 +85,7 @@ driverData.forEach (driver => {
     
     let td2 = document.createElement("td");
     td2.style.border = "1px solid #000";
-    td2.appendChild(document.createTextNode(`${driver.title} star(s)`));
+    td2.appendChild(document.createTextNode(`${driver.title}`));
     tr.appendChild(td2);
     
     let td3 = document.createElement("td");
@@ -148,5 +153,5 @@ function ControlBreak(json)
     totalPrice.innerHTML= ""
     totalPrice.appendChild(document.createTextNode("Total Price: $" + price));
     drivers.push(json)
-    createTable(json)
+    createTable(drivers)
 }
