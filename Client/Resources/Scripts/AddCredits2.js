@@ -10,7 +10,7 @@ let error = document.getElementById("error")
 
 function handleBack()
 {
-    location.href = "\EmpLandingPage.html."
+    location.href = "\EmpLandingPage.html"
 }
 
 function handleOnLoad()

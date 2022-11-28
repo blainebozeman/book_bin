@@ -16,7 +16,7 @@ function handleCheckout()
 
 function handleBack()
 {
-    location.href = "\EmpLandingPage.html."
+    location.href = "\EmpLandingPage.html"
 }
 
 //Login Form

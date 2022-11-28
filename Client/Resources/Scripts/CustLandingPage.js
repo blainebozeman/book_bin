@@ -8,12 +8,12 @@ let user = document.getElementById("user")
         CustomerName.textContent = "Customer Name: " + customer[0].fName + " " + customer[0].lName;
         if(customer[0].credits != 0)
         {
-            CustomerCredit.textContent = "Customer Credit: $" + customer[0].credits;
+            CustomerCredits.textContent = "Customer Credit: $" + customer[0].credits;
         }
         else 
         {
             customer[0].credits = 0
-            CustomerCredit.textContent = "Customer Credit: $" + customer[0].credits;
+            CustomerCredits.textContent = "Customer Credit: $" + customer[0].credits;
         }
     }
 function handleOnClick()
