@@ -8,6 +8,9 @@ let CustomerCredit = document.getElementById("CustomerCredits");
 let addForm = document.getElementById("addForm");
 let message = document.getElementById("message");
 let booksList = document.getElementById("books")
+let totalPrice = document.getElementById("totalPrice")
+let price= 0;
+let drivers = [];
 
 function handleBack()
 {
@@ -34,7 +37,59 @@ function SetPage()
         CustomerCredit.textContent = "Customer Credit: $" + customer[0].credits;
     }
 }
+function createTable(driverData)
+{
+let table = document.createElement("table");
+    
+table.style.border = "1px solid #000";
+table.id = "driversTable";
 
+let tableBody = document.createElement("tbody");
+tableBody.style.border = "1px solid #000";
+tableBody.id = "driverstableBody";
+table.appendChild(tableBody);
+
+let tableRow = document.createElement("tr");
+tableRow.style.border = "1px solid #000";
+tableBody.appendChild(tableRow);
+
+let tableHeader1 = document.createElement("th");
+tableHeader1.style.width = "200px"
+tableHeader1.style.border = "1px solid #000";
+tableHeader1.appendChild(document.createTextNode('Book ID'));
+tableRow.appendChild(tableHeader1);
+
+let tableHeader2 = document.createElement("th");
+tableHeader2.style.width = "75px"
+tableHeader2.style.border = "1px solid #000";
+tableHeader2.appendChild(document.createTextNode('Book Title'));
+tableRow.appendChild(tableHeader2);
+
+let tableHeader3 = document.createElement("th");
+tableHeader3.style.border = "1px solid #000";
+tableHeader3.appendChild(document.createTextNode('Book Price'));
+tableRow.appendChild(tableHeader3);
+driverData.forEach (driver => {
+    let tr = document.createElement("tr");
+    tableBody.appendChild(tr);
+    
+    let td1 = document.createElement("td");
+    td1.style.border = "1px solid #000";
+    td1.appendChild(document.createTextNode(`${driver.bookID}`));
+    tr.appendChild(td1);
+    
+    let td2 = document.createElement("td");
+    td2.style.border = "1px solid #000";
+    td2.appendChild(document.createTextNode(`${driver.title} star(s)`));
+    tr.appendChild(td2);
+    
+    let td3 = document.createElement("td");
+    td3.style.border = "1px solid #000";
+    td3.appendChild(document.createTextNode(`${driver.price}`));
+    tr.appendChild(td3);
+})
+booksList.appendChild(table);
+}
 function createForm()
 {
     let form = document.createElement("form");
@@ -76,60 +131,22 @@ function GetBook(book)
         return response.json();
     }).then(function(json){
         console.log(json);
-        // if (json.CustUserName == "nothing_here_34759842718928765432")
-        // {
-        //     error.innerHTML = '';
-        //     error.appendChild(document.createTextNode("Please enter a valid username and password")); 
-        // }
-        // else
-        // { 
-        //     ControlBreak(json, user)
-        // }
+        if (json.title == "nothing_here_34759842718928765432")
+        {
+            message.innerHTML = '';
+            message.appendChild(document.createTextNode("Please enter a valid book ID")); 
+        }
+        else
+        { 
+            ControlBreak(json)
+        }
     });
-// .then(res => res.json())
-// .then(data => {
-//     books = data.map(book=>{
-//     //data.forEach(book => {
-//     const bookCard = bookCardTemplate.content.cloneNode(true).children[0]
-//     const header = bookCard.querySelector("[data-header]")
-//     const body = bookCard.querySelector("[data-body]")
-//     header.textContent = book.title
-//     body.textContent = book.author
-    
-//     bookCardContainer.append(bookCard)
-    
-// //     return {title: book.title, author: book.author, element: book}
-// })
-// })
-    // fetch(categoryurl, {method: 'GET', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
-    // body : JSON.stringify(book)
-    // }).then(function(response){     
-    //     console.log(response);
-    //     return response.json();
-    // }).then(function(json){
-    //     console.log(json);
-    //     if (json.CustUserName == "nothing_here_34759842718928765432")
-    //     {
-    //         message.innerHTML = '';
-    //         message.appendChild(document.createTextNode("Please enter a valid username and password")); 
-    //     }
-    //     else
-    //     { 
-    //         ControlBreak(json, user)
-    //     }
-    // });
 }
-function ControlBreak(json, user)
+function ControlBreak(json)
 {
-    if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
-    {
-        sessionStorage.setItem('customerUser', JSON.stringify(json));
-        customer = JSON.parse(sessionStorage.getItem('customerUser'));
-        SetPage();
-    }
-    else
-    {
-        message.innerHTML = '';
-        message.appendChild(document.createTextNode("Sorry, some error has occured"));
-    }
+    price = price + json.price
+    totalPrice.innerHTML= ""
+    totalPrice.appendChild(document.createTextNode("Total Price: $" + price));
+    drivers.push(json)
+    createTable(json)
 }
