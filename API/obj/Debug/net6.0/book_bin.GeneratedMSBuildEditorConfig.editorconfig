@@ -8,17 +8,9 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = book_bin
 build_property.RootNamespace = book_bin
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\krysi\source\repos\book_bin\api\
+build_property.ProjectDir = /Users/blainebozeman/book_bin/API/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\krysi\source\repos\book_bin\api
-=======
-build_property.ProjectDir = /Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/API/
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/blainebozeman/Documents/Source/Repos/group project fall 2022/book_bin/API
->>>>>>> 660055db491dada6a5e58431088184356a13a114
+build_property.MSBuildProjectDirectory = /Users/blainebozeman/book_bin/API
 build_property._RazorSourceGeneratorDebug = 
