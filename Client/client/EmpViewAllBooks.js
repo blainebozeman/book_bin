@@ -5,6 +5,7 @@ function getBooks(){
         console.log(response);
         return response.json();
     }).then(function(json){
+        console.log(json)
         let ul = document.createElement("ul");
         json.forEach((book)=>{
             let dateAdded = new Date(book.dateAdded);
@@ -73,8 +74,10 @@ function postBook(){
         {
             method: "POST",
             headers: {
-                "Accept": 'application/json',
-                "Content-Type": 'application/json'
+                // "Accept": 'application/json',
+                // "Content-Type": 'application/json',
+                "Content-Type": 'text/plain'
+                //"Access-Control-Allow-Origin": 'https://localhost:5001/'
             },
             body: JSON.stringify({
                 Title: Title,
@@ -85,7 +88,7 @@ function postBook(){
                 BookCondition: BookCondition,
                 dateAdded: dateAdded
             }),
-            mode: "no-cors"
+            // mode: "no-cors"
         })
         .then((response)=>{
             console.log(response);

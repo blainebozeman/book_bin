@@ -23,7 +23,7 @@
 </style>
 </head>
 <body onload = "getBooks()">
-    <script type = "text/javascript" src =client/EmpViewAllBooks.js></script>
+    <script type = "text/javascript" src ="client/EmpViewAllBooks.js"defer></script>
 
 <div class = "header">
     <h1>Book Bin</h1>
@@ -38,9 +38,18 @@
     </div>
     <div>
         <form onsubmit="return false;" method="post">
-            <label for="book_title">Book Title</label>
-            <input type="text" name="driver_name" id="driver_name"/>
-            <label for="condition">condition</label>
+            <label for="Title">Book Title</label>
+            <input type="text" name="Title" id="Title"/>
+           
+            <label for="ISBN">ISBN</label>
+            <input type="text" name="ISBN" id="ISBN"/>
+            <label for="Author">Book Author</label>
+            <input type="text" name="Author" id="Author"/>
+            <label for="Genre">Book Genre</label>
+            <input type="text" name="Genre" id="Genre"/>
+            <label for="Price">Book Price</label>
+            <input type="number" name="Price" id="Price"/> 
+            <label for="BookCondition">BookCondition</label>
             <!-- <select name="rating">
                 <option value="0">option1</option>
                 <option value="2">option1</option>
@@ -48,9 +57,9 @@
                 <option value="4">option1</option>
                 <option value="5">option1</option>
             </select> -->
-            <input type="range" min="1" max="5" step="1" name="condition" id="condition"/>
-            <label for="date_hired">Date Hired</label>
-            <input type="date" name="date_hired" id="date_hired"/>
+            <input type="range" min="1" max="5" step="1" name="BookCondition" id="BookCondition"/>
+            <label for="DateAdded">Date Added</label>
+            <input type="date" name="DateAdded" id="DateAdded"/>
             <input type="submit" value="submit" onclick="postBook()">
         </form>
     </div>
