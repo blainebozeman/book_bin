@@ -20,7 +20,7 @@ namespace book_bin.Controllers
         [HttpGet]
         public List<Employees> Get()
         {
-            System.Console.WriteLine("HERE");
+            // System.Console.WriteLine("HERE");
             EmployeeData dataAccess = new EmployeeData();
             return dataAccess.GetAll();
         }
@@ -38,7 +38,7 @@ namespace book_bin.Controllers
         [HttpPost]
         public List<Employees> Post([FromBody] Employees user)
         {
-            System.Console.WriteLine("HERE IN POST");
+            // System.Console.WriteLine("HERE IN POST");
             EmployeeData dataAccess = new EmployeeData();
             List<Employees> data;
             try

@@ -12,7 +12,7 @@ namespace API.Models
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = $"insert into books(BookID, Title, Author, ISBN, Condition, Price, DateAdded) VALUES (@BookID, @Title, @Author, @ISBN, @Conditon, @Price, @DateAdded);";
+            string stm = $"insert into books(BookID, Title, Author, ISBN, Genre, BookCondition, Price, DateAdded) VALUES (@BookID, @Title, @Author, @ISBN, @Genre, @Condition, @Price, @DateAdded);";
             MySqlCommand cmd = new MySqlCommand(stm, con);
 
             cmd.Parameters.AddWithValue("@BookID", book.BookID);
@@ -26,6 +26,7 @@ namespace API.Models
             cmd.Prepare();
             cmd.ExecuteNonQuery();
 
+    
         }
     }
 }

@@ -33,7 +33,7 @@ namespace book_bin.Controllers
             // System.Console.WriteLine("HERE IN POST");
             // GetCustomers dataAccess = new GetCustomers();
             // return dataAccess.GetSelect(user); 
-            System.Console.WriteLine("HERE IN POST");
+            // System.Console.WriteLine("HERE IN POST");
             List<Customer> data;
             if (user.FName == "")
             {

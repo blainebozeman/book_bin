@@ -11,7 +11,7 @@ namespace API.Models
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = $"update books set deleted = 1 where id = @BookID;";
+            string stm = $"update books set deleted = 1 where BookID = @BookID;";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             // cmd.Parameters.AddWithValue("@id", driver.Id);
             cmd.Parameters.AddWithValue("@BookID", BookID);

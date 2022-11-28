@@ -17,7 +17,7 @@ function getBooks(){
             }
             BookCondition.value=book.BookCondition;
 
-            li.innerHTML= `Book Title: ${book.Title} <br />
+            li.innerHTML= `Book Title: ${book.title} <br />
             Date Added: ${dateAdded.toLocaleDateString('en-US')} <br />
             
             `;
@@ -28,7 +28,7 @@ function getBooks(){
 
             //onclick what it does pass book id
             deleteBtn.onclick = function () { 
-                deleteBook(book.BookID);
+                deleteBook(book.bookID);
                 li.remove();
               };
 
@@ -44,7 +44,7 @@ function getBooks(){
                 // let bookid = document.getElementById('BookID').value;
                 // let conditon = document.getElementById('condition').value;
 
-                editBook(book.BookID, BookCondition.value);
+                editBook(book.bookID, BookCondition.value);
               
             };
 
@@ -69,14 +69,24 @@ function postBook(){
     const Price = document.getElementById("Price").value;
     const BookCondition = document.getElementById("BookCondition").value;
     const dateAdded = document.getElementById("DateAdded").value;
+    const body = JSON.stringify({
+        Title: Title,
+        ISBN: ISBN,
+        Author: Author,
+        Genre: Genre,
+        Price: Price,
+        BookCondition: BookCondition,
+        dateAdded: dateAdded
+    })
+    console.log(body);
 
     fetch(postDriversApiUrl,
         {
             method: "POST",
             headers: {
-                // "Accept": 'application/json',
-                // "Content-Type": 'application/json',
-                "Content-Type": 'text/plain'
+                "Accept": 'application/json',
+                "Content-Type": 'application/json',
+                // "Content-Type": 'text/plain'
                 //"Access-Control-Allow-Origin": 'https://localhost:5001/'
             },
             body: JSON.stringify({
@@ -85,7 +95,7 @@ function postBook(){
                 Author: Author,
                 Genre: Genre,
                 Price: Price,
-                BookCondition: BookCondition,
+                Condition: BookCondition,
                 dateAdded: dateAdded
             }),
             // mode: "no-cors"
@@ -97,7 +107,7 @@ function postBook(){
 }
 
 function deleteBook(BookID){
-    const deleteBooksURL = "https://localhost:5001/api/books" + BookID;
+    const deleteBooksURL = "https://localhost:5001/api/books/" + BookID;
     
     fetch(deleteBooksURL, {
         method: "DELETE",
@@ -115,7 +125,7 @@ function deleteBook(BookID){
     })
 }
 function editBook(BookID, BookCondition, Title, Genre, Author, Price, dateAdded, ISBN){
-    const editBooksApiUrl = "https://localhost:5001/api/books" + BookID;
+    const editBooksApiUrl = "https://localhost:5001/api/books/" + BookID;
     
     // const id = document.getElementById("id").value;
     // const rating = document.getElementById("rating").value;

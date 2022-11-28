@@ -22,7 +22,7 @@ namespace book_bin.Controllers
         [HttpGet]
         public List<Books> Get()
         {
-            System.Console.WriteLine("HERE");
+            // System.Console.WriteLine("HERE");
             IGetAllBooks readObject = new ReadBooks();
             return readObject.GetAllBooks();
             // BookData dataAccess = new BookData();
@@ -52,7 +52,7 @@ namespace book_bin.Controllers
         // PUT: api/books/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int BookID, int Condition, [FromBody] Books book)
+        public void Put(int BookID, string Condition, [FromBody] Books book)
         {
             IEditBook editObject = new EditBook();
             editObject.EditBooks(book);
@@ -60,7 +60,7 @@ namespace book_bin.Controllers
 
         // DELETE: api/books/5
         [EnableCors("OpenPolicy")]
-        [HttpDelete("{id}")]
+        [HttpDelete("{BookID}")]
         public void Delete(int BookID)
         {
             IDeleteBook deleteObject = new DeleteBook();
