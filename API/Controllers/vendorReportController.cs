@@ -1,9 +1,14 @@
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
+using API.DataAccess;
+using API.Models;
+using API.Models.Interfaces;
 
 namespace book_bin.Controllers
 {
@@ -12,14 +17,20 @@ namespace book_bin.Controllers
     public class vendorReportController : ControllerBase
     {
         // GET: api/vendorReport
+        [EnableCors("OpenPolicy")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<VendorReport> Get()
         {
-            return new string[] { "value1", "value2" };
+            // System.Console.WriteLine("HERE");
+            IGetVendorReport readVendorList = new ReadVendorReports();
+            return readVendorList.GetVendorReports();
+            // BookData dataAccess = new BookData();
+            // return dataAccess.GetAll();
         }
 
+
         // GET: api/vendorReport/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "Getxxxxxxx")]
         public string Get(int id)
         {
             return "value";
