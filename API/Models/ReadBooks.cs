@@ -40,7 +40,7 @@ namespace API.Models
                 Deleted = rdr.GetInt32(6),
                 Price = rdr.GetDouble(7), 
                 DateAdded = rdr.GetDateTime(8),
-                VendororCusotmerName = rdr.GetString(9)
+                VendororCustomerName = rdr.GetString(9)
                 });
             }
                 
@@ -75,7 +75,7 @@ namespace API.Models
                 Deleted = rdr.GetInt32(6),
                 Price = rdr.GetDouble(7), 
                 DateAdded = rdr.GetDateTime(8),
-                VendororCusotmerName = rdr.GetString(9)
+                VendororCustomerName = rdr.GetString(9)
             };
         }
     }
