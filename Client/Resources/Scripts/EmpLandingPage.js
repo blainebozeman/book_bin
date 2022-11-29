@@ -10,5 +10,5 @@ function handleOnLoad()
 
 function handleOnClick(temp)
 {
-    location.href = Client/FullInventory.html
+    location.href = temp
 }
