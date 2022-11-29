@@ -63,20 +63,22 @@ namespace API.Models
             cmd.Prepare();
             MySqlDataReader rdr = cmd.ExecuteReader();
 
+            Books singlebook = new Books();
             rdr.Read();
+                singlebook.ISBN = rdr.GetInt32(0);
+                singlebook.Title = rdr.GetString(1);
+                singlebook.Author = rdr.GetString(2);
+                singlebook.Condition = rdr.GetString(3);
+                singlebook.Genre = rdr.GetString(4);
+                singlebook.BookID = rdr.GetInt32(5);
+                singlebook.Deleted = rdr.GetInt32(6);
+                singlebook.Price = rdr.GetDouble(7); 
+                singlebook.DateAdded = rdr.GetDateTime(8);
+                singlebook.VendororCustomerName = rdr.GetString(9);
+
+
             con.Close();
-            return new Books(){
-                ISBN = rdr.GetInt32(0),
-                Title = rdr.GetString(1), 
-                Author = rdr.GetString(2), 
-                Condition = rdr.GetString(3),
-                Genre = rdr.GetString(4),
-                BookID = rdr.GetInt32(5),
-                Deleted = rdr.GetInt32(6),
-                Price = rdr.GetDouble(7), 
-                DateAdded = rdr.GetDateTime(8),
-                VendororCustomerName = rdr.GetString(9)
-            };
+            return singlebook;
         }
     }
 }
