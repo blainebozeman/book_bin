@@ -1,4 +1,5 @@
-function getVendorReport(){
+function getVendorReport()
+{
     const allVendorReportURL = "https://localhost:5001/api/books";
     document.getElementById("books").innerHTML="";
     fetch(allVendorReportURL).then(function(response){
@@ -7,54 +8,84 @@ function getVendorReport(){
     }).then(function(json){
         console.log(json)
         let ul = document.createElement("ul");
-        json.forEach((getVendorReport)=>{
-            let vendororcustomerName = new String(getVendorReport.vendororCustomerName);
-            let li = document.createElement("li");
+        createTable(json)
+    })
+}
+function createTable(driverData)
+{
+let table = document.createElement("table");
+    
+table.style.border = "1px solid #000";
+table.id = "driversTable";
+
+let tableBody = document.createElement("tbody");
+tableBody.style.border = "1px solid #000";
+tableBody.id = "driverstableBody";
+table.appendChild(tableBody);
+
+let tableRow = document.createElement("tr");
+tableRow.style.border = "1px solid #000";
+tableBody.appendChild(tableRow);
+
+let tableHeader1 = document.createElement("th");
+tableHeader1.style.width = "250px"
+tableHeader1.style.border = "1px solid #000";
+tableHeader1.appendChild(document.createTextNode('Vendor or Customer Name'));
+tableRow.appendChild(tableHeader1);
+
+// let tableHeader2 = document.createElement("th");
+// tableHeader2.style.width = "200px"
+// tableHeader2.style.border = "1px solid #000";
+// tableHeader2.appendChild(document.createTextNode('Book Title'));
+// tableRow.appendChild(tableHeader2);
+
+// let tableHeader3 = document.createElement("th");
+// tableHeader3.style.border = "1px solid #000";
+// tableHeader3.appendChild(document.createTextNode('Book Price'));
+// tableRow.appendChild(tableHeader3);
+driverData.forEach (driver => {
+    let tr = document.createElement("tr");
+    tableBody.appendChild(tr);
+    
+    let td1 = document.createElement("td");
+    td1.style.border = "1px solid #000";
+    td1.appendChild(document.createTextNode(`${driver.vendororCustomerName}`));
+    tr.appendChild(td1);
+    
+    // let td2 = document.createElement("td");
+    // td2.style.border = "1px solid #000";
+    // td2.appendChild(document.createTextNode(`${driver.title}`));
+    // tr.appendChild(td2);
+    
+    // let td3 = document.createElement("td");
+    // td3.style.border = "1px solid #000";
+    // td3.appendChild(document.createTextNode(`${driver.price}`));
+    // tr.appendChild(td3);
+})
+document.getElementById("books").appendChild(table);
+}
+//         json.forEach((getVendorReport)=>{
+            
+//             let vendororcustomerName = new String(getVendorReport.vendororCustomerName);
+//             let li = document.createElement("li");
 
     
-            //Number of Orders: ${getVendorReport.numberOfBooksSold} <br />
-            li.innerHTML= `
-            Vendor Or Customer Name: ${getVendorReport.vendororCustomerName} <br />
+//             //Number of Orders: ${getVendorReport.numberOfBooksSold} <br />
+//             li.innerHTML= `
+//             Vendor Or Customer Name: ${getVendorReport.vendororCustomerName} <br />
 
             
-            `;
-            // li.appendChild(BookCondition);
-
-            // let deleteBtn = document.createElement("button"); //created delete button
-            // deleteBtn.innerHTML = "Remove Book";
-
-            // //onclick what it does pass book id
-            // deleteBtn.onclick = function () { 
-            //     deleteBook(book.BookID);
-            //     li.remove();
-            //   };
-
-            //   //added onto list items
-            // li.appendChild(deleteBtn);
-            ul.appendChild(li);
-
-            // let editBtn = document.createElement("button"); //created edit button
-            // editBtn.innerHTML = "Edit";
-            
-
-            // editBtn.onclick = function () {
-            //     // let bookid = document.getElementById('BookID').value;
-            //     // let conditon = document.getElementById('condition').value;
-
-            //     editBook(book.BookID, BookCondition.value);
-              
-            // };
-
-            // li.appendChild(editBtn);
-            ul.appendChild(li);
+//             `;
+//             ul.appendChild(li);
+//             ul.appendChild(li);
      
-        });
+//         });
        
-        document.getElementById("books").appendChild(ul);
-        console.log(json);
-    }).catch(function(error){
-        console.log(error);
-    });
-}
+//         document.getElementById("books").appendChild(ul);
+//         console.log(json);
+//     }).catch(function(error){
+//         console.log(error);
+//     });
+// }
 
             
