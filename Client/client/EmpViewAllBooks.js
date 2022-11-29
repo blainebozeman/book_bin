@@ -69,6 +69,7 @@ function postBook(){
     const Price = document.getElementById("Price").value;
     const BookCondition = document.getElementById("BookCondition").value;
     const dateAdded = document.getElementById("DateAdded").value;
+    const vendororcustomerName = document.getElementById("VendororCustomerName").value;
     const body = JSON.stringify({
         Title: Title,
         ISBN: ISBN,
@@ -76,7 +77,8 @@ function postBook(){
         Genre: Genre,
         Price: Price,
         BookCondition: BookCondition,
-        dateAdded: dateAdded
+        dateAdded: dateAdded,
+        vendororcustomerName: vendororcustomerName
     })
     console.log(body);
 
@@ -96,7 +98,8 @@ function postBook(){
                 Genre: Genre,
                 Price: Price,
                 Condition: BookCondition,
-                dateAdded: dateAdded
+                dateAdded: dateAdded,
+                vendororcustomerName: vendororcustomerName
             }),
             // mode: "no-cors"
         })
@@ -124,7 +127,7 @@ function deleteBook(BookID){
         // getDrivers();
     })
 }
-function editBook(BookID, BookCondition, Title, Genre, Author, Price, dateAdded, ISBN){
+function editBook(BookID, BookCondition, Title, Genre, Author, Price, dateAdded, vendororcustomerName, ISBN){
     const editBooksApiUrl = "https://localhost:5001/api/books/" + BookID;
     
     // const id = document.getElementById("id").value;
@@ -143,7 +146,8 @@ function editBook(BookID, BookCondition, Title, Genre, Author, Price, dateAdded,
             Genre: Genre,
             Price: Price,
             BookCondition: BookCondition,
-            dateAdded: dateAdded
+            dateAdded: dateAdded,
+            vendororcustomerName: vendororcustomerName
         })
     })
     .then((response)=>{

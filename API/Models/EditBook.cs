@@ -18,6 +18,8 @@ namespace API.Models
             cmd.Parameters.AddWithValue("@BookID", book.BookID);
             cmd.Prepare();
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

@@ -16,9 +16,11 @@ namespace API.Models
 
         public DateTime DateAdded {get; set;}
 
+        public string VendororCustomerName{get; set;}
+
         public override string ToString()
         {
-            return "Book ID: "+ this.BookID +" "+ " Title: "+ this.Title +" " + " Author: " + this.Author + " ISBN " + this.ISBN + "Conditon" + this.Condition + "Genre" + this.Genre + "Price" + this.Price;
+            return "Book ID: "+ this.BookID +" "+ " Title: "+ this.Title +" " + " Author: " + this.Author + " ISBN " + this.ISBN + "Conditon" + this.Condition + "Genre" + this.Genre + "Price" + this.Price + "VendororCustomerName" + this.VendororCustomerName;
         }
 
     }

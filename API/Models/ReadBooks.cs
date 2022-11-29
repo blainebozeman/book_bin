@@ -39,13 +39,14 @@ namespace API.Models
                 BookID = rdr.GetInt32(5),
                 Deleted = rdr.GetInt32(6),
                 Price = rdr.GetDouble(7), 
-                DateAdded = rdr.GetDateTime(8)
+                DateAdded = rdr.GetDateTime(8),
+                VendororCusotmerName = rdr.GetString(9)
                 });
             }
                 
                 
                //System.Console.WriteLine(rdr.GetInt32(0) + " " + rdr.GetString(1) +  " "  + rdr.GetString(2) + " " + rdr.GetInt32(3) + " " + rdr.GetString(4) + " " + rdr.GetString(5)+ " " + rdr.GetString(6) + "" + rdr.GetDouble(7) + "" + rdr.GetDateTime(8));
-    
+            con.Close();
             return allBooks;
         }
 
@@ -63,6 +64,7 @@ namespace API.Models
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
+            con.Close();
             return new Books(){
                 ISBN = rdr.GetInt32(0),
                 Title = rdr.GetString(1), 
@@ -72,7 +74,8 @@ namespace API.Models
                 BookID = rdr.GetInt32(5),
                 Deleted = rdr.GetInt32(6),
                 Price = rdr.GetDouble(7), 
-                DateAdded = rdr.GetDateTime(8)
+                DateAdded = rdr.GetDateTime(8),
+                VendororCusotmerName = rdr.GetString(9)
             };
         }
     }
