@@ -1,6 +1,6 @@
 function getBooks(){
-    const allBooksUrl = "https://localhost:5001/api/books";
-    document.getElementById("books").innerHTML="";
+    const allBooksUrl = "https://localhost:5001/api/books/";
+    document.getElementById("singlebookview").innerHTML="";
     fetch(allBooksUrl).then(function(response){
         console.log(response);
         return response.json();
@@ -36,7 +36,7 @@ function getBooks(){
             //     deleteBook(book.BookID);
             //     li.remove();
             //   };
-            li.id = "booklibrary"
+
             //   //added onto list items
             // li.appendChild(deleteBtn);
             ul.appendChild(li);
