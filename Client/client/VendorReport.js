@@ -64,28 +64,5 @@ driverData.forEach (driver => {
 })
 document.getElementById("books").appendChild(table);
 }
-//         json.forEach((getVendorReport)=>{
-            
-//             let vendororcustomerName = new String(getVendorReport.vendororCustomerName);
-//             let li = document.createElement("li");
-
-    
-//             //Number of Orders: ${getVendorReport.numberOfBooksSold} <br />
-//             li.innerHTML= `
-//             Vendor Or Customer Name: ${getVendorReport.vendororCustomerName} <br />
-
-            
-//             `;
-//             ul.appendChild(li);
-//             ul.appendChild(li);
-     
-//         });
-       
-//         document.getElementById("books").appendChild(ul);
-//         console.log(json);
-//     }).catch(function(error){
-//         console.log(error);
-//     });
-// }
 
             

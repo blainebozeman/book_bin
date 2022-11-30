@@ -11,48 +11,36 @@ namespace book_bin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class reportController : ControllerBase
+    public class itemizedorderController : ControllerBase
     {
-        // GET: api/report
+        // GET: api/itemizedorder
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/report/5
-        [HttpGet("{id}", Name = "Getxxx")]
+        // GET: api/itemizedorder/5
+        [HttpGet("{id}", Name = "Getxxxxx")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/report
+        // POST: api/itemizedorder
         [HttpPost]
-        public Order Post([FromBody] Order value)
+        public void Post([FromBody] OrderItemized value)
         {
-                        // System.Console.WriteLine("HERE IN POST");
-            PostOrders dataAccess = new PostOrders();
-            Order data;
-            try
-            {
-                data=dataAccess.PutCustomer(value); 
-            }
-            catch
-            {
-                System.Console.WriteLine("Place Order Failed");
-                data = new Order{OrderID = -123456789};
-            }
-            return data;
+            
         }
 
-        // PUT: api/report/5
+        // PUT: api/itemizedorder/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/report/5
+        // DELETE: api/itemizedorder/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
