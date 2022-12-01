@@ -1,3 +1,27 @@
+/* Navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(40, 40, 40)
+  }
+  
+  li {
+    float: left;
+    color: white;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover {
+    background-color: #111;
+  }
 /* Search Books */
 .search-wrapper{
 display: flex;
@@ -30,55 +54,6 @@ margin-bottom: .25rem;
 .hide{
     display: none;
 }
-
-/* Navigation bar */
-ul {
-    list-style-type: none;
-  margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #111;
-  }
-
-/* nav {
-    width: 100;
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: sticky;
-    width:100%;
-}
-ul li{
-    float: right;
-}
-ul li a{
-    display: block;
-    padding: 8px;
-    background-color: gray;
-    color: rgb(102, 25, 25);
-}
-li a:hover{
-    background-color: lightgray;
-} */
 
 
 .jumbotron
@@ -156,5 +131,10 @@ form
 #user{
   padding: 20px;
   font-size: 25px;
-  font-family: copperplate, Times, serif; 
+  font-family: 'Times New Roman', Times, serif; 
+}
+
+#books
+{
+
 }
