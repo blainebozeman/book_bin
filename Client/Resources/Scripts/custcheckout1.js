@@ -84,7 +84,7 @@ function ControlBreak(json, user)
     if(user.CustUserName == json[0].custUserName && user.CustPassword == json[0].custPassword)
     {
         sessionStorage.setItem('customerUser', JSON.stringify(json));
-        error.appendChild(document.createTextNode("User Found!"));
+        location.href = "\custcheckout2.html"
 
     }
     else

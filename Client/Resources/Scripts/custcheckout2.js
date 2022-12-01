@@ -154,9 +154,17 @@ booksList.appendChild(table);
 }
 function handleSubmit()
 {
-    let temp;
-    UpdateBook();
-    PostOrder();
+    if(customer[0].credits>=price)
+    {
+        UpdateBook();
+        PostOrder();
+        UpdateCredits();
+    }
+    else
+    {
+        message.innerHTML = '';
+        message.appendChild(document.createTextNode("Customer Short Credits"))
+    }
 }
 function UpdateBook()
 {
@@ -193,16 +201,18 @@ function PostOrder()
         return response.json();
     }).then(function(json){
         console.log(json)
-        //PostOrderItemized(json)
+        PostOrderItemized(json)
     });
 }
-function PostOrderItemized(temp)
+function PostOrderItemized(json)
 {
+    console.log("Made it to the PostOrderItemized")
+    console.log(json.orderID)
         drivers.forEach (driver => {
             let user = 
             {
-                OrderID : temp.OrderID,
-                BookID : driver.BookID
+                OrderID : json.orderID,
+                BookID : driver.bookID
             }
             const itemizedOrderURL = "https://localhost:5001/api/itemizedorder";
             
@@ -220,4 +230,35 @@ function PostOrderItemized(temp)
                 console.log(response);
             })
         })
+}
+function UpdateCredits()
+{
+    let user = 
+    {
+        CustID : customer[0].custID,
+        CustUserName : customer[0].custUserName,
+        CustPassword : customer[0].custPassword,
+        FName : customer[0].fName,
+        LName : customer[0].lName,
+        Credits : customer[0].credits - price
+    }
+    console.log(user)
+    fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
+    body : JSON.stringify(user)
+    }).then(function(response){     
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        console.log(json);
+        if (json.CustUserName == "nothing_here_34759842718928765432")
+        {
+            message.innerHTML = '';
+            message.appendChild(document.createTextNode("Error")); 
+        }
+        else
+        { 
+            message.innerHTML = '';
+            message.appendChild(document.createTextNode("Order Placed"))
+        }
+    });
 }

@@ -57,7 +57,7 @@ namespace API.Models
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = "SELECT * from books where BookID= @BookID";
+            string stm = "SELECT * from books where BookID= @BookID and deleted = 0";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             cmd.Parameters.AddWithValue("@BookID", BookID);
             cmd.Prepare();

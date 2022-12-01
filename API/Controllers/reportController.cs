@@ -36,14 +36,16 @@ namespace book_bin.Controllers
             Order data;
             try
             {
-                data=dataAccess.PutCustomer(value); 
+                data=dataAccess.PutCustomer(value);
+                System.Console.WriteLine($"Placed order #" + data.OrderID);
+                return data; 
             }
             catch
             {
                 System.Console.WriteLine("Place Order Failed");
                 data = new Order{OrderID = -123456789};
+                return data;
             }
-            return data;
         }
 
         // PUT: api/report/5

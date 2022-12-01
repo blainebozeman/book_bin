@@ -31,7 +31,20 @@ namespace book_bin.Controllers
         [HttpPost]
         public void Post([FromBody] OrderItemized value)
         {
-            
+            PostItemizedOrder dataAccess = new PostItemizedOrder();
+            //Order data;
+            // try
+            // {
+                dataAccess.PostItemized(value);
+                //System.Console.WriteLine($"Placed order #" + data.OrderID);
+                //return data; 
+            // }
+            // catch
+            // {
+            //     System.Console.WriteLine("Place Order Failed");
+            //     //data = new Order{OrderID = -123456789};
+            //     //return data;
+            // }
         }
 
         // PUT: api/itemizedorder/5

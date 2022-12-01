@@ -19,7 +19,7 @@ namespace API.DataAccess
             //Is it open?
             try
             {
-                System.Console.WriteLine("made it here");
+                System.Console.WriteLine("made it to post books");
                 con.Open();
             }
             catch (System.Exception)
@@ -28,7 +28,8 @@ namespace API.DataAccess
             }
             DateTime now = DateTime.Now;
             System.Console.WriteLine(now);
-            string stm = $"INSERT INTO `fdfpqo2wtkd2rwyf`.`custorder` (`TotalAmount`, `OrdDateTime`, `Cust_id`, `Emp_id`) VALUES ('{order.TotalAmount}', '{now.Year}-{now.Month}-{now.Day} {now.Hour}:{now.Minute}:{now.Second}', '{order.Cust_id}', '{order.EmpId}');";
+            string time = $"{now.Year}-{now.Month}-{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+            string stm = $"INSERT INTO `fdfpqo2wtkd2rwyf`.`custorder` (`TotalAmount`, `OrdDateTime`, `Cust_id`, `Emp_id`) VALUES ('{order.TotalAmount}', '{time}', '{order.Cust_id}', '{order.EmpId}');";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             cmd.ExecuteNonQuery();
 
@@ -36,7 +37,8 @@ namespace API.DataAccess
             Order thisOrder = new Order();
             List<Order> temp = new List<Order>();
 
-            stm = $"SELECT * from custorder WHERE TotalAmount LIKE '{order.TotalAmount}' and OrdDateTime LIKE '{now.Year}-{now.Month}-{now.Day} {now.Hour}:{now.Minute}:{now.Second}' and Cust_id LIKE '{order.Cust_id}' and Emp_id LIKE '{order.EmpId}';";
+            //stm = $"SELECT * from custorder WHERE TotalAmount LIKE '{order.TotalAmount}' and OrdDateTime LIKE '{time}' and Cust_id LIKE '{order.Cust_id}' and Emp_id LIKE '{order.EmpId}';";
+            stm = $"SELECT * from custorder WHERE TotalAmount LIKE '{order.TotalAmount}' and Cust_id LIKE '{order.Cust_id}' and Emp_id LIKE '{order.EmpId}';";
             MySqlCommand cmd2 = new MySqlCommand(stm, con);
             MySqlDataReader rdr = cmd2.ExecuteReader();
 

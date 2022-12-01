@@ -46,7 +46,7 @@ namespace book_bin.Controllers
             }
             catch
             {
-                System.Console.WriteLine("no user");
+                System.Console.WriteLine("That book was not found");
                 data = new Books(){Title = "nothing_here_34759842718928765432"};
             }
             return data;

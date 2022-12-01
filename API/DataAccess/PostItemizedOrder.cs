@@ -8,7 +8,7 @@ namespace API.DataAccess
         public void PostItemized(OrderItemized order)
         {
             //test
-            System.Console.WriteLine(order.ItemizedOrderID);
+            System.Console.WriteLine("In itemized, Order Number is" + order.OrderID);
 
             //variables
             //List<Customer> customers = new List<Customer>();
@@ -19,7 +19,7 @@ namespace API.DataAccess
             //Is it open?
             try
             {
-                System.Console.WriteLine("made it here");
+                System.Console.WriteLine("made it to Itemized");
                 con.Open();
             }
             catch (System.Exception)
