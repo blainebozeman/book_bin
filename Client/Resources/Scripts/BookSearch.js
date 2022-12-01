@@ -6,25 +6,32 @@ let books=[]
 
 searchInput.addEventListener("input", e => {
     const value = e.target.value.toLowerCase()
-    books.forEach(book => {
-        const isVisible =
-        book.title.toLowerCase().includes(value)||
-        book.author.toLowerCase().includes(value)
-        book.element.classList.toggle("hide", !isVisible)
-    })
+    let searchedBooks = books;
+    if(value != '') {
+        searchedBooks = searchedBooks.filter((book) => book.title.toLowerCase().startsWith(value));
+    }
+    loadBooks(searchedBooks);
 })
+
 
 fetch("https://localhost:5001/api/books")
 .then(res => res.json())
 .then(data => {
-    books = data.map(book => {
-     const card= bookCardTemplate.content.cloneNode(true).children[0]
-    const header = card.querySelector("[data-header]")
-    const body = card.querySelector("[data-body]")
-    header.textContent = book.title
-    body.textContent = book.author
-    
-    bookCardContainer.append(card)
-    return {title: book.title, author: book.author, element: card}
+    books = data;
+    loadBooks(data);
 })
-})
+
+function loadBooks(data) {
+    bookCardContainer.innerHTML = '';
+    data.map(book => {
+        const card= bookCardTemplate.content.cloneNode(true).children[0]
+       const header = card.querySelector("[data-header]")
+       const body = card.querySelector("[data-body]")
+       header.textContent = book.title
+       body.textContent = "Author: "+ book.author +" Price: "+ book.price +" Condition: "+book.condition
+       
+        bookCardContainer.append(card)
+        return {title: book.title, author: book.author, price: book.price, condition: book.condition, element: card}
+   })
+   //console.log(books);
+}
