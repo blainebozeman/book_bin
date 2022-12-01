@@ -20,7 +20,8 @@ namespace API.Models
             MySqlConnection con = new MySqlConnection(cs);
             con.Open();
             //select COUNT(*) as NumberofBooksSold, VendororCustomerName from books group by VendororCustomername;
-            string stm = "select * from VendorReports;";
+            //string stm = "select VendororCustomerName from books group by VendororCustomerName;";
+            string stm = "SELECT * FROM fdfpqo2wtkd2rwyf.vendorreports;";
             MySqlCommand cmd = new MySqlCommand(stm, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
