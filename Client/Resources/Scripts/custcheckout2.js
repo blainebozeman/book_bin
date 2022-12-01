@@ -240,7 +240,7 @@ function UpdateCredits()
         CustPassword : customer[0].custPassword,
         FName : customer[0].fName,
         LName : customer[0].lName,
-        Credits : customer[0].credits - price
+        Credits : parseInt(customer[0].credits) - price
     }
     console.log(user)
     fetch(categoryurl, {method: 'POST', headers : {"Accept" : "application/json", "Content-Type" : 'application/json',},
@@ -259,6 +259,9 @@ function UpdateCredits()
         { 
             message.innerHTML = '';
             message.appendChild(document.createTextNode("Order Placed"))
+            sessionStorage.setItem('customerUser', JSON.stringify(json));
+            customer = JSON.parse(sessionStorage.getItem('customerUser'));
+            SetPage();
         }
     });
 }

@@ -11,9 +11,6 @@
 <body onload="handleOnLoad()">
         
     <div>
-        <div id = user>
-
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,20 +23,26 @@
             </ul>
         </nav>
     </div>
+    <div id = user>
 
+    </div>
+    
     <h1>Employee Hub</h1>
 
     <div>
 
 <!-- Can possibly change all the options below into just one button with the action name on the button like in admin hub* -->
 
+<div id = "center">
+
     <h3>View Detailed Inventory Report: </h3><button onclick="handleOnClick('EmpViewAllBooks.html')">Go</button>
     <h3>Update Inventory: </h3><button onclick="handleOnClick('addbooks.html')">Go</button>
     <h3>Add Customers: </h3><button onclick="handleOnClick('AddCustomer.html')">Go</button>
     <h3>Add Credits: </h3><button onclick="handleOnClick('addcredits1.html')">Go</button>
     <h3>Checkout Customer: </h3><button onclick="handleOnClick('custcheckout1.html')">Go</button>
-    <h3>Log Out</h3><button>Go</button>
-    </div>
+    <h3>Log Out</h3><button onclick="handleOnClick('index.html')">Go</button>
+</div>
+</div>
 
 <script src="./Resources/Scripts/EmpLandingPage.js"> </script>
 </body>

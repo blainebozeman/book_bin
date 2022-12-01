@@ -58,7 +58,7 @@ namespace book_bin.Controllers
                 }
                 catch
                 {
-                    System.Console.WriteLine("no user");
+                    System.Console.WriteLine("No user found to update the credits of");
                     data = new List<Customer>{new Customer(){CustUserName = "nothing_here_34759842718928765432"}};
                 }
                 return data;
