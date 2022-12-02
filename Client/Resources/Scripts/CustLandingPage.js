@@ -18,5 +18,5 @@ let user = document.getElementById("user")
     }
 function handleOnClick()
 {
-    location.href = "CustSearchBooks.html"
+    location.href = "SearchBooks.html"
 }
