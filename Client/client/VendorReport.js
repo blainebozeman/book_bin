@@ -1,6 +1,6 @@
 function getVendorReport()
 {
-    const allVendorReportURL = "https://localhost:5001/api/books";
+    const allVendorReportURL = "https://localhost:5001/api/vendorreport";
     document.getElementById("books").innerHTML="";
     fetch(allVendorReportURL).then(function(response){
         console.log(response);
@@ -33,11 +33,11 @@ tableHeader1.style.border = "1px solid #000";
 tableHeader1.appendChild(document.createTextNode('Vendor or Customer Name'));
 tableRow.appendChild(tableHeader1);
 
-// let tableHeader2 = document.createElement("th");
-// tableHeader2.style.width = "200px"
-// tableHeader2.style.border = "1px solid #000";
-// tableHeader2.appendChild(document.createTextNode('Book Title'));
-// tableRow.appendChild(tableHeader2);
+let tableHeader2 = document.createElement("th");
+tableHeader2.style.width = "200px"
+tableHeader2.style.border = "1px solid #000";
+tableHeader2.appendChild(document.createTextNode('Number of Books Sold'));
+tableRow.appendChild(tableHeader2);
 
 // let tableHeader3 = document.createElement("th");
 // tableHeader3.style.border = "1px solid #000";
@@ -52,10 +52,10 @@ driverData.forEach (driver => {
     td1.appendChild(document.createTextNode(`${driver.vendororCustomerName}`));
     tr.appendChild(td1);
     
-    // let td2 = document.createElement("td");
-    // td2.style.border = "1px solid #000";
-    // td2.appendChild(document.createTextNode(`${driver.title}`));
-    // tr.appendChild(td2);
+    let td2 = document.createElement("td");
+    td2.style.border = "1px solid #000";
+    td2.appendChild(document.createTextNode(`${driver.numberofBooksSold}`));
+    tr.appendChild(td2);
     
     // let td3 = document.createElement("td");
     // td3.style.border = "1px solid #000";
@@ -64,5 +64,3 @@ driverData.forEach (driver => {
 })
 document.getElementById("books").appendChild(table);
 }
-
-            

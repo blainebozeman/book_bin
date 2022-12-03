@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {}
+    "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj": {
+    "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
+        "projectUniqueName": "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj",
         "projectName": "book_bin",
-        "projectPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\book_bin.csproj",
-        "packagesPath": "C:\\Users\\krysi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krysi\\source\\repos\\book_bin\\api\\obj\\",
+        "projectPath": "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj",
+        "packagesPath": "/Users/blainebozeman/.nuget/packages/",
+        "outputPath": "/Users/blainebozeman/Applications/book_bin/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\krysi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/blainebozeman/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -57,8 +57,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -70,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
