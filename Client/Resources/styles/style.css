@@ -49,6 +49,9 @@ background-color: white;
 padding: .5rem;
 display: 'block';
 }
+.card:hover {
+  background-color: rgb(219, 219, 219);
+  }
 .card> .header{
 margin-bottom: .25rem;
 }

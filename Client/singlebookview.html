@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <link rel="stylesheet" href="./resources/styles/style.css">
 
-<body>
+<body onload="GetBook()">
     
     <div>
         <nav>
@@ -33,23 +33,23 @@
         
     </div>
     
-    <div id="bookidinput">
-        <form onsubmit= "getBook()">
+    <!-- <div id="bookidinput">
+        <form onsubmit= "GetBook()">
             <label for="singleID">Enter Book ID for detailed view:</label><br>
             <input type="text" id="singleBookID" name="singleID" value=""><br>
             <input type="submit" value="Submit">
         </form> 
 
         
-    </div>
+    </div> -->
     <br>
         <div id = "books">
             
         </div>
     
     <p>To place a hold on this book, please call (888) 888-8888</p>
-    <a href="index.html">
-        <button>Back to Home</button>
+    <a href="SearchBooks.html">
+        <button>Back to All Books</button>
     </a>
     
     

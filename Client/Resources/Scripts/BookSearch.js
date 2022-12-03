@@ -17,6 +17,7 @@ searchInput.addEventListener("input", e => {
 fetch("https://localhost:5001/api/books")
 .then(res => res.json())
 .then(data => {
+    console.log(data)
     books = data;
     loadBooks(data);
 })
@@ -24,13 +25,20 @@ fetch("https://localhost:5001/api/books")
 function loadBooks(data) {
     bookCardContainer.innerHTML = '';
     data.map(book => {
-        const card= bookCardTemplate.content.cloneNode(true).children[0]
+       const card= bookCardTemplate.content.cloneNode(true).children[0]
        const header = card.querySelector("[data-header]")
        const body = card.querySelector("[data-body]")
        header.textContent = book.title
        body.textContent = "Author: "+ book.author +" Price: "+ book.price +" Condition: "+book.condition
        
         bookCardContainer.append(card)
+        
+        card.addEventListener("click", function(event)
+        {
+            event.preventDefault()
+            sessionStorage.setItem('bookItem', JSON.stringify(book));
+            location.href = "\SingleBookView.html."
+        })
         return {title: book.title, author: book.author, price: book.price, condition: book.condition, element: card}
    })
    //console.log(books);

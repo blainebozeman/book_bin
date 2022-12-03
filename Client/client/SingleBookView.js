@@ -1,38 +1,39 @@
+let book = JSON.parse(sessionStorage.getItem('bookItem'));
 let booksList = document.getElementById("books")
 
-function getBook()
+// function getBook()
+// {
+//     event.preventDefault();
+//     var allBooksUrl = "https://localhost:5001/api/books/";
+//     let singleBookID = document.getElementById("singleBookID").value;
+//     console.log(singleBookID);
+//     allBooksUrl += singleBookID;
+//     let book = 
+//     {
+//         BookID : singleBookID,
+//         Title : "",
+//         Author : "",
+//         Condition : "",
+//         Genre : "",
+//         VendororCustomerName: ""
+//     }
+//     console.log(book);
+//     GetBook(book);
+// }
+function GetBook()
 {
-    event.preventDefault();
-    var allBooksUrl = "https://localhost:5001/api/books/";
-    let singleBookID = document.getElementById("singleBookID").value;
-    console.log(singleBookID);
-    allBooksUrl += singleBookID;
-    let book = 
-    {
-        BookID : singleBookID,
-        Title : "",
-        Author : "",
-        Condition : "",
-        Genre : "",
-        VendororCustomerName: ""
-    }
-    console.log(book);
-    GetBook(book);
-}
-function GetBook(book)
-{
-    fetch("https://localhost:5001/api/books/"+book.BookID).then(function(response)
-    {     
-        console.log(response);
-        return response.json();
-    }).then(function(json){
-        console.log(json);
-        if (json.title == "nothing_here_34759842718928765432")
-        {
+    // fetch("https://localhost:5001/api/books/"+book.BookID).then(function(response)
+    // {     
+    //     console.log(response);
+    //     return response.json();
+    // }).then(function(json){
+    //     console.log(json);
+    //     if (json.title == "nothing_here_34759842718928765432")
+    //     {
 
-        }
-        else
-        { 
+    //     }
+    //     else
+    //     { 
             booksList.innerHTML = "";
             let table = document.createElement("table");
                 
@@ -90,34 +91,34 @@ function GetBook(book)
                 
                 let td1 = document.createElement("td");
                 td1.style.border = "1px solid #000";
-                td1.appendChild(document.createTextNode(`${json.bookID}`));
+                td1.appendChild(document.createTextNode(`${book.bookID}`));
                 tr.appendChild(td1);
                 
                 let td2 = document.createElement("td");
                 td2.style.border = "1px solid #000";
-                td2.appendChild(document.createTextNode(`${json.title}`));
+                td2.appendChild(document.createTextNode(`${book.title}`));
                 tr.appendChild(td2);
                 
                 let td3 = document.createElement("td");
                 td3.style.border = "1px solid #000";
-                td3.appendChild(document.createTextNode(`${json.author}`));
+                td3.appendChild(document.createTextNode(`${book.author}`));
                 tr.appendChild(td3);
 
                 let td4 = document.createElement("td");
                 td4.style.border = "1px solid #000";
-                td4.appendChild(document.createTextNode(`${json.genre}`));
+                td4.appendChild(document.createTextNode(`${book.genre}`));
                 tr.appendChild(td4);
 
                 let td5 = document.createElement("td");
                 td5.style.border = "1px solid #000";
-                td5.appendChild(document.createTextNode(`${json.isbn}`));
+                td5.appendChild(document.createTextNode(`${book.isbn}`));
                 tr.appendChild(td5);
 
                 let td6 = document.createElement("td");
                 td6.style.border = "1px solid #000";
-                td6.appendChild(document.createTextNode(`${json.price}`));
+                td6.appendChild(document.createTextNode(`${book.price}`));
                 tr.appendChild(td6);
             booksList.appendChild(table);
         }
-    });
-}
+//     });
+// }
