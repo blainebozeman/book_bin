@@ -8,7 +8,6 @@
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <link rel="stylesheet" href="./resources/styles/style.css">
-<script src="./resources/scripts/index.js"defer></script>
 
 <body>
     
@@ -24,14 +23,14 @@
                 <li><a href="addcustomer.html">Create Account</a></li>
             </ul>
         </nav>
-
+        
     </div>
 
     <h1>Book Info</h1>
-
+    
     <div id="singlebookview">
         
-
+        
     </div>
     
     <div id="bookidinput">
@@ -39,16 +38,21 @@
             <label for="singleID">Enter Book ID for detailed view:</label><br>
             <input type="text" id="singleBookID" name="singleID" value=""><br>
             <input type="submit" value="Submit">
-          </form> 
+        </form> 
 
-
+        
     </div>
+    <br>
+        <div id = "books">
+            
+        </div>
     
     <p>To place a hold on this book, please call (888) 888-8888</p>
     <a href="index.html">
         <button>Back to Home</button>
     </a>
-
-
+    
+    
+    <script src="client\SingleBookView.js"></script>
 </body>
 </html>

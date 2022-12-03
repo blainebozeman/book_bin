@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj": {}
+    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {}
   },
   "projects": {
-    "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj": {
+    "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj",
+        "projectUniqueName": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
         "projectName": "book_bin",
-        "projectPath": "/Users/blainebozeman/Applications/book_bin/API/book_bin.csproj",
-        "packagesPath": "/Users/blainebozeman/.nuget/packages/",
-        "outputPath": "/Users/blainebozeman/Applications/book_bin/API/obj/",
+        "projectPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\book_bin.csproj",
+        "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxim\\OneDrive\\Desktop\\Source\\Repose\\book_bin\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/blainebozeman/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

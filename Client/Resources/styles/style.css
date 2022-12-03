@@ -139,7 +139,16 @@ form
   font-family: 'Times New Roman', Times, serif; 
 }
 
-#books
+#books > ul
 {
-
+  padding: 40px;
+    background-color: white;
 }
+
+#books > ul > li
+{
+  float: left;
+  color: black;
+  padding: 20px;
+}
+
