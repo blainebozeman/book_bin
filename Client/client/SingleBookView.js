@@ -1,8 +1,14 @@
-function getBook(bookid){
-    const allBooksUrl = "https://localhost:5001/api/books/";
-    allBooksUrl += bookid;
+function getBook(){
+    var allBooksUrl = "https://localhost:5001/api/books/";
+    var singleBookID = document.getElementById("singleBookID").value;
+    // console.log(singleBookID);
+    allBooksUrl += singleBookID;
+    allBooksUrl += '/';
+    const singleBookUrl = allBooksUrl;
+    console.log(singleBookUrl);
     document.getElementById("singlebookview").innerHTML="";
-    fetch(allBooksUrl).then(function(response){
+    
+    fetch(singleBookUrl).then(function(response){
         console.log(response);
         return response.json();
     }).then(function(json){
@@ -31,4 +37,9 @@ function getBook(bookid){
     });
 }
 
+
+function RouteBookIdInput(){
+
+
+}
             
