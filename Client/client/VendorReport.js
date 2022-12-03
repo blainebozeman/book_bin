@@ -57,10 +57,10 @@ driverData.forEach (driver => {
     td2.appendChild(document.createTextNode(`${driver.numberofBooksSold}`));
     tr.appendChild(td2);
     
-    // let td3 = document.createElement("td");
-    // td3.style.border = "1px solid #000";
-    // td3.appendChild(document.createTextNode(`${driver.price}`));
-    // tr.appendChild(td3);
+    let td3 = document.createElement("td");
+    td3.style.border = "1px solid #000";
+    td3.appendChild(document.createTextNode(`${driver.price}`));
+    tr.appendChild(td3);
 })
 document.getElementById("books").appendChild(table);
 }
